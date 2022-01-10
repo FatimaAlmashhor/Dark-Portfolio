@@ -24,8 +24,11 @@
     // max-width: 100%;
     .toggle_icon{
         // width: 100%;
+        position: fixed;
+        right: 0px;
         @include flex-row;  
         justify-content: end;
+        z-index: 1000;
         p{
             cursor: pointer;
             background-color: $primery_red;
@@ -173,9 +176,6 @@
                     background-color: rebeccapurple;
                 }
                 @media screen and(min-width : $desktop) {
-                    main{
-                        width: calc($main_width - 8px);
-                    }
                     &_about{
                         grid-template-columns: 2fr 1fr;
                         &_skills{
@@ -200,13 +200,16 @@
         &_warpper{
             @include flex-row ;
             // background-color: rgb(196, 196, 64);
+            main{
+                // margin-left : $nav_width;
+                width: $main_width 
+                // background-color: white;
+            }
         }
         .toggle_icon{
             display: none;
         }
-        main{
-            margin-left : $nav_width;
-        }
+        
     }
 
 }

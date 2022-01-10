@@ -1,9 +1,14 @@
 .nav{
-    position: relative;
+    position: sticky;
     z-index: 99999;
     width: 0px;
     transition: 0.3s ease;
     overflow: hidden;
+    top:0px ;
+    left:0px ;     
+    margin:0px;
+    padding :4px ;
+    height: 100vh;
     &_list{
         margin-top:20px;
         margin-left: 10px;;
@@ -13,14 +18,8 @@
 // desktop 
 @media screen and(min-width : $desktop) {
     .nav{
-        --nav-padding:6px ; 
-        position: sticky;
+        --nav-padding:4px ; 
         z-index: inherit;
-        top:0px ;
-        left:0px ;
-        margin:0px;
-        padding : 6px ;
-        height: 100vh;
         background-color: $main_bg_color;
         width: $nav_width;
         &_logo{
