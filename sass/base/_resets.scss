@@ -1,0 +1,53 @@
+*{
+    margin:  0px ;
+    padding : 0px ;
+    box-sizing: border-box;
+}
+body , html {
+    overflow-x:  hidden;
+    scroll-behavior: smooth;
+}
+
+a{
+    color : inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    margin: 0px ;
+    padding : 0px; 
+}
+.color-red{
+    color: $primery_red
+}
+.color-blue{
+    color: $primery_blue
+}
+
+.secondary-test{
+    color : $secondry_gray_text ;
+    font-size :$sm_font_size ;
+    font-family: $second_font_family;
+}
+.peimary-text{
+    font-size :$lg_font_size ;
+    font-family: $second_font_family;
+}
+
+
+
+// need to fixed 
+.section_more-work ul{
+    display: grid;
+    grid-template-columns: repeat(4 ,1fr);
+}
+.section_more-work ul li{
+    min-width: 200px;
+}
+.test{
+    background-color: $primery_blue;
+    padding : 20px ;
+    margin: 10px;
+    border
+}

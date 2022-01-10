@@ -1,0 +1,430 @@
+/*
+This file is used to contain all abstracts imports.
+Files inside this folder can contain abstract settings, helpers or functions. They have no direct output.
+*/
+/*
+This file is used to contain all base imports.
+Files inside this folder can contain global styles used in the project.
+*/
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body, html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.color-red {
+  color: #FF6464;
+}
+
+.color-blue {
+  color: #5CDCF8;
+}
+
+.secondary-test {
+  color: #D2D2D2;
+  font-size: 24px;
+  font-family: "RopaSans  ,  sans-serif";
+}
+
+.peimary-text {
+  font-size: 64px;
+  font-family: "RopaSans  ,  sans-serif";
+}
+
+.section_more-work ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+}
+
+.section_more-work ul li {
+  min-width: 200px;
+}
+
+.test {
+  background-color: #5CDCF8;
+  padding: 20px;
+  margin: 10px;
+}
+
+/* Additonal Base Stylesheets */
+/*
+This file is used to contain all component imports.
+Files inside this folder should contain all styles relating to a reusable component.
+*/
+.btn {
+  display: block;
+  border-color: transparent;
+  padding: 10px 30px;
+  background-color: transparent;
+  color: #FF6464;
+  border: 1px solid #FF6464;
+  position: relative;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 2px;
+  left: 4px;
+  height: 100%;
+  border: 1px solid #5CDCF8;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.btn:disabled, .btn.disabled {
+  pointer-events: none;
+}
+
+.btn:hover::after {
+  top: 0px;
+  left: 0px;
+}
+
+.btn:hover {
+  background-color: rgba(160, 41, 41, 0.6);
+}
+
+input, textarea {
+  display: block;
+  padding: 10px;
+  min-width: 70%;
+  border: 0px;
+  margin: 10px 0px;
+  background-color: #8d8d8d;
+  color: white;
+  resize: none;
+}
+
+.nav {
+  width: 0px;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 900px) {
+  .nav {
+    --nav-padding:6px ;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 6px;
+    height: 100vh;
+    background-color: #1D1D1D;
+    width: 175px;
+  }
+  .nav_logo {
+    --logo_height:61px ;
+    width: 61px;
+    height: --height;
+  }
+  .nav_logo img {
+    width: inherit;
+  }
+  .nav_list {
+    padding-left: 10px;
+  }
+  .nav_list:after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 200px;
+    color: gray;
+    left: 4px;
+    top: calc(var(--nav-padding) + var(--nav-padding));
+  }
+  .nav_list li {
+    line-height: 45px;
+  }
+  .nav_list li:before {
+    content: ' ';
+    position: absolute;
+    width: 2px;
+    height: auto;
+    color: white;
+  }
+  .nav_list li .active {
+    padding: 7px 20px;
+    background-color: #5CDCF8;
+  }
+}
+
+.project_img-view {
+  max-width: 100%;
+  min-height: 246px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.project_img-view img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 900px) {
+  .project_img-view {
+    width: 60%;
+    margin-right: 40px;
+  }
+}
+
+.section_numberic__upper {
+  font-size: 288px;
+  font-weight: bold;
+  font-family: sans-serif;
+  position: absolute;
+  opacity: 0.4;
+  top: -19%;
+  left: -10%;
+  color: gray;
+  z-index: -1;
+}
+
+.section_numberic__lower {
+  position: absolute;
+  font-size: 48px;
+  right: 0px;
+  color: #FF6464;
+}
+
+.section_numberic__lower::before {
+  content: '';
+}
+
+/* Additonal Component Stylesheets */
+/*
+This file is used to contain all component imports.
+Files inside this folder can contain specific element styles and layout. 
+*/
+footer {
+  width: 100%;
+}
+
+footer.dark {
+  background: black;
+}
+
+.protfolio {
+  background: #1D1D1D;
+  color: #FFFFFF;
+  font-family: "Roboto    , sans-serif ";
+}
+
+.protfolio .toggle_icon {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.protfolio .toggle_icon p {
+  cursor: pointer;
+  background-color: red;
+  width: auto;
+  padding: 10px;
+}
+
+.protfolio_warpper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.protfolio_warpper main {
+  padding: 10px;
+  margin: 0px auto;
+}
+
+.protfolio_warpper main .section {
+  position: relative;
+  max-width: 1600px;
+  min-height: 90vh;
+  padding: 20px;
+}
+
+.protfolio_warpper main .section h1 {
+  font-size: 72px;
+}
+
+.protfolio_warpper main .section_about {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+}
+
+.protfolio_warpper main .section_about > div {
+  margin: 0px 30px 0px 0px;
+}
+
+.protfolio_warpper main .section_about_skills {
+  padding-top: 20px;
+  width: 100%;
+}
+
+.protfolio_warpper main .section_about_skills .skill {
+  position: relative;
+  padding: 0px 0px 30px 0px;
+  width: inherit;
+}
+
+.protfolio_warpper main .section_about_skills .skill:after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  width: inherit;
+  height: 4px;
+  border-radius: 10px;
+  background-color: rgba(180, 180, 180, 0.582);
+}
+
+.protfolio_warpper main .section_about_skills .skill:before {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  width: 90%;
+  height: 4px;
+  z-index: 1;
+  border-radius: 10px;
+  background-color: #FF6464;
+}
+
+.protfolio_warpper main .section_about_skills .progress-blue:before {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  width: 70%;
+  height: 4px;
+  z-index: 1;
+  border-radius: 10px;
+  background-color: #5CDCF8;
+}
+
+.protfolio_warpper main .section_about_skills .progress-yellow:before {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  width: 70%;
+  height: 4px;
+  z-index: 1;
+  border-radius: 10px;
+  background-color: #5CDCF8;
+}
+
+.protfolio_warpper main .section_about_skills .progress-pink:before {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  width: 70%;
+  height: 4px;
+  z-index: 1;
+  border-radius: 10px;
+  background-color: #5CDCF8;
+}
+
+.protfolio_warpper main .section_work {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.protfolio_warpper main .section_work .project {
+  width: 100 .protfolio_warpper main .section_work .project;
+  padding: 10px;
+  margin: 10px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.protfolio_warpper main .section__contanct {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: rebeccapurple;
+}
+
+@media screen and (min-width: 900px) {
+  .protfolio_warpper main .section_about {
+    -ms-grid-columns: 2fr 1fr;
+        grid-template-columns: 2fr 1fr;
+  }
+  .protfolio_warpper main .section_about_skills {
+    padding-top: 0px;
+  }
+  .protfolio_warpper main .section_work .project {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .protfolio_warpper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .protfolio .toggle_icon {
+    display: none;
+  }
+  .protfolio main {
+    margin-left: 175px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

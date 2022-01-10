@@ -1,0 +1,149 @@
+@charset 'utf-8';
+
+//Vendor
+// @import "vendor/__vendor-dir";
+
+//Abstracts
+@import "abstracts/_abstracts-dir";
+
+//Base Styles
+@import "base/_base-dir";
+
+//Components
+@import "components/_components-dir";
+
+//Layout
+@import "layouts/_layouts-dir";
+
+
+.protfolio{
+    background:  $main_bg_color ;
+    color : $primary_white_text ; 
+    font-family: $main_font_family;
+    .toggle_icon{
+        width: 100%;
+        @include flex-row;  
+        justify-content: end;
+        p{
+            cursor: pointer;
+            background-color: red;
+            width: auto;
+            padding: 10px;
+        }
+    }
+    &_warpper{
+        @include flex-row ;
+        // the left side of the project 
+        main{
+            padding: 10px ;
+            margin :0px auto ;
+            
+            .section{
+                position: relative;
+                max-width: 1600px;
+                height: 90vh;
+                padding : $section_padding;
+
+                h1{
+                    font-size: $xl_font_size;
+                }
+                &_about{
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    > div{
+                        margin: 0px 30px 0px 0px;    
+                    }
+
+                    &_skills{
+                        padding-top : 20px;
+                        width: 100%;
+                        @mixin progressColor($color , $rate) {
+                            content: "";
+                            position: absolute;
+                            bottom: 10px;
+                            width: $rate;
+                            height: 4px;
+                            z-index: 1;
+                            border-radius: 10px;
+                            background-color: $color;
+                        }
+                        .skill{
+                            position: relative;
+                            padding: 0px 0px 30px 0px ;
+                            width: inherit;
+                            &:after{
+                                content: "";
+                                position: absolute;
+                                bottom: 10px;
+                                width: inherit;
+                                height: 4px;
+                                border-radius: 10px;
+                                background-color: rgba(180, 180, 180, 0.582);
+                            }
+                           
+                            &:before{
+                                @include progressColor($primery_red , 90%)
+                            }
+                            
+                        }
+                        .progress-blue{
+                            &:before{
+                                @include progressColor($primery_blue , 70%)
+                            }
+                        }
+                        .progress-yellow{
+                            &:before{
+                                @include progressColor($primery_blue , 70%)
+                            }
+                        }
+                        .progress-pink{
+                            &:before{
+                                @include progressColor($primery_blue , 70%)
+                            }
+                        }
+                    }
+                }
+                &_work{
+                    @include flex-col ;
+                    .project{
+                        width: 100&;
+                        padding: 10px;
+                        margin :10px 0px ;
+                        @include flex-col;
+                    }
+                }
+                &__contanct{
+                    @include flex-col;
+                    background-color: rebeccapurple;
+                }
+                @media screen and(min-width : $desktop) {
+                    &_about{
+                        grid-template-columns: 2fr 1fr;
+                        &_skills{
+                            padding-top : 0px;
+
+                        }
+                    }
+                    &_work{
+                        .project{
+                            @include flex-row;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+    @media screen and (min-width: $desktop) {
+        &_warpper{
+            @include flex-col ;
+        }
+        .toggle_icon{
+            display: none;
+        }
+        main{
+            margin-left : $nav_width;
+        }
+    }
+
+}

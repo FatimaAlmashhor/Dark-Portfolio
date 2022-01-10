@@ -1,0 +1,57 @@
+.nav{
+    width: 0px;
+    transition: 0.3s ease;
+    overflow: hidden;
+}
+
+// desktop 
+@media screen and(min-width : $desktop) {
+    .nav{
+        --nav-padding:6px ; 
+        position: fixed;
+        top:0px ;
+        left:0px ;
+        margin:0px;
+        padding : 6px ;
+        height: 100vh;
+        background-color: $main_bg_color;
+        width: $nav_width;
+        &_logo{
+            --logo_height:61px ; 
+            
+            width: 61px ;
+            height: --height;
+            img{
+                width: inherit;
+            }
+        
+        }
+        &_list{
+            padding-left: 10px;   
+            &:after{
+                content: '';
+                position: absolute;
+                width : 3px;
+                height: 200px;
+                color : gray;
+                left: 4px;
+                top: calc(var(--nav-padding) + var(--nav-padding))
+            }
+            li{
+                line-height: 45px;
+                &:before{
+                    content : ' '; 
+                    position :absolute;
+                    width : 2px ;
+                    height: auto;
+                    color: white
+                }
+                .active{
+                    padding: 7px 20px;
+                    background-color: $primery_blue;
+                    // opacity: 0.4;
+                }
+            }
+        }
+    }
+}

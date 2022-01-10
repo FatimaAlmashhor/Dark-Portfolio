@@ -1,0 +1,38 @@
+//Button
+.btn {
+    display: block;
+    border-color: transparent;
+    padding: 10px 30px;
+    background-color: transparent;
+    color: $primery_red;
+    border: 1px solid $primery_red;
+    position: relative;
+    cursor: pointer;
+    margin:10px;
+    &::after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      top:2px;
+      left: 4px;
+      height: 100%;
+      border: 1px solid $primery_blue;
+      transition: 0.3s ease;
+    }
+    &:disabled, 
+    &.disabled {  
+      pointer-events: none;
+    }
+  }
+
+
+  .btn:hover::after{
+      top:0px;
+      left: 0px;
+  }
+  .btn:hover{
+      background-color: rgba($color: #a02929, $alpha: 0.6);
+  }
+  //Alternate Button
+  .btn.alt {
+  }

@@ -1,0 +1,22 @@
+.section_numberic__upper{
+    font-size: $xxxl_font_size;
+    font-weight: bold;
+    font-family: sans-serif;
+    position: absolute;
+    opacity: 0.4;
+    top:-19%;
+    left: -10%;
+    color:gray;
+    z-index: -1;
+}
+
+.section_numberic__lower{
+    position:absolute;
+    font-size: $md_font_size;
+    right: 0px;
+    color:$primery_red;
+}
+.section_numberic__lower::before{
+    content: '';
+
+}

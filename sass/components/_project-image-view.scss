@@ -1,0 +1,16 @@
+.project_img-view{
+    max-width: 100%;
+    min-height: 246px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+@media screen and (min-width : $desktop) {
+    .project_img-view{
+        width: 60%;
+        margin-right: 40px;
+    }
+}
