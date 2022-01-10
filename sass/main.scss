@@ -17,35 +17,91 @@
 
 
 .protfolio{
+    position: relative;
     background:  $main_bg_color ;
     color : $primary_white_text ; 
     font-family: $main_font_family;
+    // max-width: 100%;
     .toggle_icon{
-        width: 100%;
+        // width: 100%;
         @include flex-row;  
         justify-content: end;
         p{
             cursor: pointer;
-            background-color: red;
+            background-color: $primery_red;
             width: auto;
             padding: 10px;
+        }
+    }
+    .aside-social{
+        --list-top : 80% ;
+        position: fixed;
+        right: 6px;
+        top: var(--list-top);
+        z-index: 1000;
+        opacity: 0.8;
+        ul{
+            position: relative;
+            li{
+                cursor: pointer;
+                .icon{
+                    display: block;
+                    width: 18px;
+                    margin-top:10px;
+                    overflow: hidden;
+                    svg{
+                        fill: white
+                    }
+                }
+
+            }
+            li:hover{
+                svg.link{
+                    fill: #0A66C2
+                }
+                
+                svg.twitter{
+                    fill: #1DA1F2
+                }
+                
+                svg.github{
+                    fill: #181717
+                }
+                
+            }
+            &::after{
+                content : " " ;
+                position: absolute;
+                top:calc(var(--list-top) - 390px);
+                height: 300px;
+                width: 2px;
+                right: 10px;
+                background-color: white ;
+                opacity: 0.5;
+            }
+
         }
     }
     &_warpper{
         @include flex-row ;
         // the left side of the project 
         main{
+            width:100%;
             padding: 10px ;
             margin :0px auto ;
-            
+            // max-width: 1600px;
+            // padding: 0px clamp(5% , 10% ,15%);
             .section{
                 position: relative;
-                max-width: 1600px;
-                height: 90vh;
+                width: inherit;
+                min-height: 100vh;
                 padding : $section_padding;
-
+                margin: 20px 0px;
+                @include flex-col ;
+                justify-content: center;
                 h1{
-                    font-size: $xl_font_size;
+                    font-size: $xxl_font_size;
+                    letter-spacing: 2px;
                 }
                 &_about{
                     display: grid;
@@ -56,7 +112,7 @@
 
                     &_skills{
                         padding-top : 20px;
-                        width: 100%;
+                        // width: 100%;
                         @mixin progressColor($color , $rate) {
                             content: "";
                             position: absolute;
@@ -117,6 +173,9 @@
                     background-color: rebeccapurple;
                 }
                 @media screen and(min-width : $desktop) {
+                    main{
+                        width: calc($main_width - 8px);
+                    }
                     &_about{
                         grid-template-columns: 2fr 1fr;
                         &_skills{
@@ -133,10 +192,14 @@
 
             }
         }
+        footer{
+            width:100%;
+        }
     }
     @media screen and (min-width: $desktop) {
         &_warpper{
-            @include flex-col ;
+            @include flex-row ;
+            // background-color: rgb(196, 196, 64);
         }
         .toggle_icon{
             display: none;
