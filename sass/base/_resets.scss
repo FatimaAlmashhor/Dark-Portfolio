@@ -26,17 +26,7 @@ ul {
     color: $primery_blue
 }
 
-.secondary-text{
-    color : $secondry_gray_text ;
-    font-size :$sm_font_size ;
-    font-family: $second_font_family;
-    overflow-wrap: break-word;
-}
-.peimary-text{
-    font-size :$md_font_size ;
-    font-family: $main_font_family;
-    overflow-wrap: break-word;
-}
+
 
 
 
@@ -65,16 +55,3 @@ ul {
     flex-direction: row-reverse;
 }
 
-// desktop
-@media screen and (max-width : $desktop) {
-    .secondary-text{
-        color : $secondry_gray_text ;
-        font-size :$sm_font_size ;
-        font-family: $second_font_family;
-    }
-    .peimary-text{
-        font-size :$lg_font_size ;
-        font-family: $main_font_family;
-    }
-    
-}

@@ -1,22 +1,68 @@
 // ul 
 .more-projects-gallery{
-    // overflow: hidden;
-    // background-color: lavenderblush;
-    // display: grid;
-    // grid-template-columns: repeat(auto-fill , minmax(200px ,30%));
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
+    cursor: pointer;
     // flex-basis: auto;
     .gallery_item{
-        width: 30%;
+        width: 27%;
         height: 300px;
+        flex: auto;
         position: relative;
         overflow: hidden;
+        &:hover{
+            transition: 0.4s ease-in-out;
+            .small-project{
+                background-size: 160%;
 
+                &::before{
+                    content : '' ;
+                    position: absolute;
+                    width : 100% ;
+                    height: 100%;
+                    background-color: rgba(0,0,0,0);
+                    top : 0px;
+                    left:0px;
+                }
+                &::after{
+                    transform:scale(1);
+                }
+            }
+        }
         .small-project{
+            position: relative;
             width: 100%;
             height: 100%;
+            
             background-color: rosybrown;
+            &::before{
+                content : '' ;
+                position: absolute;
+                width : 100% ;
+                height: 100%;
+                background-color: rgba(0,0,0,0.6);
+                top : 0px;
+                left:0px;
+            }
+            &::after{
+                content: 'View Me';
+                position: absolute;
+                text-align: center;
+                line-height: 200px;
+                font-size: 2rem;
+                vertical-align: middle;
+                width: 200px;
+                height:  200px;
+                border-radius: 50%;
+                background-color: rgb(235, 182, 182);
+                @include center('both');
+                top:20%;
+                left: 30%;
+                transform:scale(0);
+                transition: 0.4s ease-in-out;
+            }
         }
         [data-small-project='1']{
             background:url("../../assets/images/image1.png");
@@ -51,6 +97,6 @@
         
     }
     .item-lg{
-        flex: 2;
+        // flex: 3;
     }
 }
