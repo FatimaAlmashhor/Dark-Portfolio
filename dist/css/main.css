@@ -971,6 +971,8 @@ footer.dark {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-direction: column-reverse;
+      flex-direction: column-reverse;
 }
 
 .protfolio_warpper main .section_contenct .contanct_form {
@@ -982,9 +984,15 @@ footer.dark {
   padding-right: 20px;
 }
 
+.protfolio_warpper main .section_contenct .contanct_form .contanct_wellcoming {
+  padding: 10px 40px;
+  text-align: center;
+}
+
 .protfolio_warpper main .section footer {
   position: relative;
   height: 30px;
+  background: red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1003,8 +1011,15 @@ footer.dark {
 }
 
 .protfolio_warpper main .section footer .take-me-up {
-  top: 0px;
-  left: -30px;
+  position: absolute;
+  top: -100px;
+  left: -50px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.protfolio_warpper main .section footer .take-me-up::after {
+  content: '  ->';
 }
 
 @media screen and (min-width: 1022px) {
