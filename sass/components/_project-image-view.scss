@@ -1,8 +1,9 @@
 .project_img-view{
     position: relative;
-    width: 100%;
+    // flex: 1;
+    // width: 100%;
     height: 346px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     // overflow: hidden;
     cursor: pointer;
     &:hover{
@@ -58,7 +59,7 @@
             background-color: lightcoral;
             @include center('both');
             top:20%;
-            left: 40%;
+            left: 30%;
             transform:scale(1);
             transition: 0.4s ease-in-out;
         }

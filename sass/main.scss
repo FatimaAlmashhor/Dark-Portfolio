@@ -245,10 +245,10 @@
                     margin: clamp(5% , 10% , 15%) 0px ;
                     .project{
                         padding: 10px;
-                        margin :50px 0px ;
+                        // margin :10px 0px ;
                         @include flex-col;
                         .project_details{
-                            margin: 10px 30px ;
+                            flex:1;
                             &_links{
                                 text-align: center;
                                 align-items: center;
@@ -280,10 +280,12 @@
                             }
                         }
                         .text-left{
+                            margin-right: 50px;
+                            margin-left: auto;
+                            // background-color: rosybrown;
                            text-align: left ; 
                         //    align-self: center;
                            justify-self: flex-start;
-                        //    width: 40%;
                         }
                     }
                 }
