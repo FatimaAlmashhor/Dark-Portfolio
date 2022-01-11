@@ -15,6 +15,41 @@
     }
 }
 
+.project_name{
+    // color :rgb(190, 52, 52);
+    font-size: $md_font_size;
+    position: relative;
+    z-index: 10;
+    color: rgba($primery_red , 1);
+    top:-40px;
+    
+}
+[data-project-name='exhale']{
+    &::after{
+        content : 'Exhale' ;
+        width: 100%;
+        font-weight: bold;
+        height: 100%;
+        color: white;
+        // mix-blend-mode: saturation;
+        top:-3px;
+        left: -3px;
+        position: absolute;
+    }
+}
+[data-project-name='payoo']{
+    &::after{
+        content : 'Payoo' ;
+        width: 100%;
+        font-weight: bold;
+        height: 100%;
+        color: white;
+        // mix-blend-mode: saturation;
+        top:-3px;
+        left: -3px;
+        position: absolute;
+    }
+}
 .secondary-text{
     color : $secondry_gray_text ;
     font-size :$sm_font_size ;

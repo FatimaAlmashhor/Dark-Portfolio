@@ -249,6 +249,7 @@
                         @include flex-col;
                         .project_details{
                             flex:1;
+                            margin-top: 2rem;
                             &_links{
                                 text-align: center;
                                 align-items: center;
