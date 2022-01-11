@@ -209,6 +209,29 @@
                             color: transparent;
                             -webkit-text-stroke-width: 1px;
                             -webkit-text-stroke-color: white;
+                            cursor: pointer;
+                            &:hover{
+                                .stock-red{
+                                    color: $primery_red;
+                                    -webkit-text-stroke-color:$primery_red;
+                                }
+                                .stock-pink{
+                                    color: $secondary_pink;
+                                    -webkit-text-stroke-color:$secondary_pink;
+                                }
+                                .stock-blue{
+                                    color: $primery_blue;
+                                    -webkit-text-stroke-color:$primery_blue;
+                                }
+                                .stock-yellow{
+                                    color:$secondary_yellow;
+                                    -webkit-text-stroke-color:$secondary_yellow;
+                                }
+                                .stock-red{
+                                    color: $primery_red;
+                                    -webkit-text-stroke-color:$primery_red;
+                                }
+                            }
                         }
                     }
                 }
@@ -248,9 +271,32 @@
                         }
                     }
                 }
-                &__contanct{
+                &_contenct{
                     @include flex-col;
-                    background-color: rebeccapurple;
+                    .contanct_form{
+                        min-width: 60%;
+                        padding-bottom: 60px;
+                        form{
+                            width: 100%;
+                            padding-right: 20px;
+
+                        }
+                    }
+                }
+                footer{
+                    position: relative;
+                    width:100%;
+                    height: 30px;
+                    background: red;
+                    @include flex-col;
+                    justify-content: center;
+                    align-items: center;
+                    .take-me-up{
+                        position: absolute;
+                        top: 0px;
+                        left: -30px ;
+                        // transform: rotateX(90deg);
+                    }
                 }
                 @media screen and(min-width : $desktop) {
                     &_about{
@@ -263,16 +309,21 @@
                     &_work{
                         .project{
                             @include flex-row;
+                            height: inherit;
+                            width: 100%;
+                           
                         }
+                    }
+                    &_contenct{
+                        @include flex-row;
+
                     }
                 }
 
             }
         }
-        footer{
-            width:100%;
-        }
     }
+
     @media screen and (min-width: $desktop) {
         &_warpper{
             @include flex-row ;

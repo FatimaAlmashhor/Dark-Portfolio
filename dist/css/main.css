@@ -40,7 +40,7 @@ ul {
   color: #5CDCF8;
 }
 
-.secondary-test {
+.secondary-text {
   color: #D2D2D2;
   font-size: 24px;
   font-family: "Ropa Sans", sans-serif;
@@ -66,6 +66,26 @@ ul {
   background-color: #5CDCF8;
   padding: 20px;
   margin: 10px;
+}
+
+.flex-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 /* Additonal Base Stylesheets */
@@ -116,9 +136,9 @@ Files inside this folder should contain all styles relating to a reusable compon
 input, textarea {
   display: block;
   padding: 10px;
-  min-width: 70%;
+  min-width: 100%;
+  margin-bottom: 9px;
   border: 0px;
-  margin: 10px 0px;
   background-color: #0d0d11;
   color: white;
   resize: none;
@@ -239,15 +259,80 @@ input, textarea {
 }
 
 .project_img-view {
-  max-width: 100%;
-  min-height: 246px;
+  width: 100%;
+  height: 346px;
   margin-bottom: 20px;
   overflow: hidden;
+  cursor: pointer;
 }
 
-.project_img-view img {
+.project_img-view:hover .project_view::before {
+  content: '';
+  position: absolute;
   width: 100%;
-  height: auto;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  top: 0px;
+  left: 0px;
+}
+
+.project_img-view:hover .project_view::after {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.project_img-view:hover[data-project='*'] {
+  background-size: 2rem;
+  border: 2px solid red;
+}
+
+.project_img-view .project_view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.5s,-webkit-transform 0.4s;
+  transition: all 0.5s,-webkit-transform 0.4s;
+  transition: transform 0.4s,all 0.5s;
+  transition: transform 0.4s,all 0.5s,-webkit-transform 0.4s;
+}
+
+.project_img-view .project_view::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  top: 0px;
+  left: 0px;
+}
+
+.project_img-view .project_view::after {
+  content: 'View Me';
+  position: absolute;
+  text-align: center;
+  line-height: 200px;
+  font-size: 2rem;
+  vertical-align: middle;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: lightcoral;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.project_img-view .payoo {
+  background: url("../../assets/images/payoo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @media screen and (min-width: 1022px) {
@@ -572,6 +657,32 @@ footer.dark {
   color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: white;
+  cursor: pointer;
+}
+
+.protfolio_warpper main .section_lang_warpper .lang-items:hover .stock-red {
+  color: #FF6464;
+  -webkit-text-stroke-color: #FF6464;
+}
+
+.protfolio_warpper main .section_lang_warpper .lang-items:hover .stock-pink {
+  color: #F85CA7;
+  -webkit-text-stroke-color: #F85CA7;
+}
+
+.protfolio_warpper main .section_lang_warpper .lang-items:hover .stock-blue {
+  color: #5CDCF8;
+  -webkit-text-stroke-color: #5CDCF8;
+}
+
+.protfolio_warpper main .section_lang_warpper .lang-items:hover .stock-yellow {
+  color: #F8E85C;
+  -webkit-text-stroke-color: #F8E85C;
+}
+
+.protfolio_warpper main .section_lang_warpper .lang-items:hover .stock-red {
+  color: #FF6464;
+  -webkit-text-stroke-color: #FF6464;
 }
 
 .protfolio_warpper main .section_work {
@@ -629,7 +740,7 @@ footer.dark {
   height: auto;
 }
 
-.protfolio_warpper main .section__contanct {
+.protfolio_warpper main .section_contenct {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -637,7 +748,42 @@ footer.dark {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: rebeccapurple;
+}
+
+.protfolio_warpper main .section_contenct .contanct_form {
+  min-width: 60%;
+  padding-bottom: 60px;
+}
+
+.protfolio_warpper main .section_contenct .contanct_form form {
+  width: 100%;
+  padding-right: 20px;
+}
+
+.protfolio_warpper main .section footer {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.protfolio_warpper main .section footer .take-me-up {
+  position: absolute;
+  top: 0px;
+  left: -30px;
 }
 
 @media screen and (min-width: 1022px) {
@@ -656,11 +802,18 @@ footer.dark {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    height: inherit;
+    width: 100%;
   }
-}
-
-.protfolio_warpper footer {
-  width: 100%;
+  .protfolio_warpper main .section_contenct {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 
 @media screen and (min-width: 1022px) {

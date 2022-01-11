@@ -26,7 +26,7 @@ ul {
     color: $primery_blue
 }
 
-.secondary-test{
+.secondary-text{
     color : $secondry_gray_text ;
     font-size :$sm_font_size ;
     font-family: $second_font_family;
@@ -51,4 +51,11 @@ ul {
     padding : 20px ;
     margin: 10px;
     
+}
+
+.flex-col {
+    @include flex-col;
+}
+.flex-row {
+    @include flex-row;
 }
