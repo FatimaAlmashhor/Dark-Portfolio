@@ -80,6 +80,12 @@ ul {
           flex-direction: row-reverse;
 }
 
+.justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .hilght-text {
   position: relative;
   font-size: 24px;
@@ -111,10 +117,10 @@ ul {
 }
 
 .third-text {
-  font-size: 24px;
+  font-size: 20px;
   font-family: "Ropa Sans", sans-serif;
   overflow-wrap: break-word;
-  color: #D2D2D2;
+  color: #ebebeb;
 }
 
 @media screen and (max-width: 1022px) {
@@ -908,6 +914,40 @@ footer.dark {
 
 .protfolio_warpper main .section_work .project .project_details {
   margin: 10px 30px;
+}
+
+.protfolio_warpper main .section_work .project .project_details_links {
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.protfolio_warpper main .section_work .project .project_details_links .live_link {
+  position: relative;
+  margin: 0px 3rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.protfolio_warpper main .section_work .project .project_details_links .live_link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 80%;
+  top: 0px;
+  padding: 4px 6px;
+  left: -3px;
+  background-color: #FF6464;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  z-index: -1;
+}
+
+.protfolio_warpper main .section_work .project .project_details_links .live_link:hover::after {
+  width: 100%;
 }
 
 .protfolio_warpper main .section_work .project .text-left {
