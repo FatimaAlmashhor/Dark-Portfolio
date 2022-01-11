@@ -113,10 +113,12 @@ $breakpoints: (
 @mixin flex-col() {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 @mixin flex-row() {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 @mixin transition($type : all, $duration : 400ms ,$method :ease) {

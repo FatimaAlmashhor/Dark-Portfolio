@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body , html {
-    overflow-x:  hidden;
+    // overflow-x:  hidden;
     scroll-behavior: smooth;
     font-family: "Open Sans",sans-serif;
 }
@@ -30,19 +30,21 @@ ul {
     color : $secondry_gray_text ;
     font-size :$sm_font_size ;
     font-family: $second_font_family;
+    overflow-wrap: break-word;
 }
 .peimary-text{
-    font-size :$lg_font_size ;
+    font-size :$md_font_size ;
     font-family: $main_font_family;
+    overflow-wrap: break-word;
 }
 
 
 
 // need to fixed 
-.section_more-work ul{
-    display: grid;
-    grid-template-columns: repeat(4 ,1fr);
-}
+// .section_more-work ul{
+//     display: grid;
+//     grid-template-columns: repeat(4 ,1fr);
+// }
 .section_more-work ul li{
     min-width: 200px;
 }
@@ -61,4 +63,18 @@ ul {
 }
 .flex-reverse{
     flex-direction: row-reverse;
+}
+
+// desktop
+@media screen and (max-width : $desktop) {
+    .secondary-text{
+        color : $secondry_gray_text ;
+        font-size :$sm_font_size ;
+        font-family: $second_font_family;
+    }
+    .peimary-text{
+        font-size :$lg_font_size ;
+        font-family: $main_font_family;
+    }
+    
 }

@@ -16,7 +16,6 @@ Files inside this folder can contain global styles used in the project.
 }
 
 body, html {
-  overflow-x: hidden;
   scroll-behavior: smooth;
   font-family: "Open Sans",sans-serif;
 }
@@ -44,18 +43,13 @@ ul {
   color: #D2D2D2;
   font-size: 24px;
   font-family: "Ropa Sans", sans-serif;
+  overflow-wrap: break-word;
 }
 
 .peimary-text {
-  font-size: 64px;
+  font-size: 48px;
   font-family: "Roboto", sans-serif;
-}
-
-.section_more-work ul {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
+  overflow-wrap: break-word;
 }
 
 .section_more-work ul li {
@@ -76,6 +70,8 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .flex-row {
@@ -86,6 +82,8 @@ ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .flex-reverse {
@@ -93,6 +91,18 @@ ul {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 1022px) {
+  .secondary-text {
+    color: #D2D2D2;
+    font-size: 24px;
+    font-family: "Ropa Sans", sans-serif;
+  }
+  .peimary-text {
+    font-size: 64px;
+    font-family: "Roboto", sans-serif;
+  }
 }
 
 /* Additonal Base Stylesheets */
@@ -170,12 +180,13 @@ input, textarea {
 
 .nav_logo {
   --logo_height:61px ;
-  width: 61px;
-  height: var(--height);
 }
 
 .nav_logo img {
-  width: inherit;
+  width: 40%;
+  margin-left: 17px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .nav_list {
@@ -505,6 +516,8 @@ footer.dark {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
@@ -554,7 +567,6 @@ footer.dark {
   display: block;
   width: 18px;
   margin-top: 10px;
-  overflow: hidden;
 }
 
 .protfolio .aside-social ul li .icon svg {
@@ -592,6 +604,8 @@ footer.dark {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .protfolio_warpper main {
@@ -613,18 +627,20 @@ footer.dark {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
 .protfolio_warpper main .section h1 {
-  font-size: 96px;
+  font-size: 64px;
   letter-spacing: 2px;
+  overflow-wrap: break-word;
 }
 
 .protfolio_warpper main .section_about {
-  max-width: 1400px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
@@ -636,14 +652,11 @@ footer.dark {
 }
 
 .protfolio_warpper main .section_about_paragraph {
-  padding: 30px;
-  display: inline-block;
-  vertical-align: top;
+  padding: 10px 0px;
 }
 
 .protfolio_warpper main .section_about_skills {
   padding-top: 20px;
-  padding-right: 70px;
 }
 
 .protfolio_warpper main .section_about_skills .skill {
@@ -721,10 +734,10 @@ footer.dark {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-transition: all 400ms ease;
   transition: all 400ms ease;
-  -webkit-animation: scrolling-left 10s linear infinite;
-  animation: scrolling-left 10s linear infinite;
 }
 
 @-webkit-keyframes scrolling-left {
@@ -752,7 +765,6 @@ footer.dark {
 .protfolio_warpper main .section_lang_warpper .lang-items {
   display: inline-block;
   margin: 0px 12px;
-  font-size: 48px;
   font-weight: lighter;
   opacity: 0.6;
   background-color: transparent;
@@ -795,7 +807,8 @@ footer.dark {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 1400px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: clamp(5%, 10%, 15%) 0px;
 }
 
@@ -809,6 +822,8 @@ footer.dark {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .protfolio_warpper main .section_work .project .project_details {
@@ -833,6 +848,8 @@ footer.dark {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .protfolio_warpper main .section_contenct .contanct_form {
@@ -854,6 +871,8 @@ footer.dark {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -863,7 +882,6 @@ footer.dark {
 }
 
 .protfolio_warpper main .section footer .take-me-up {
-  position: absolute;
   top: 0px;
   left: -30px;
 }
@@ -876,6 +894,9 @@ footer.dark {
   .protfolio_warpper main .section_about_skills {
     padding-top: 0px;
   }
+  .protfolio_warpper main .section_about_skills_paragraph {
+    padding: 10px 30px;
+  }
   .protfolio_warpper main .section_work .project {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -884,6 +905,8 @@ footer.dark {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     height: inherit;
   }
   .protfolio_warpper main .section_work .flex-reverse {
@@ -900,6 +923,8 @@ footer.dark {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
@@ -912,9 +937,14 @@ footer.dark {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .protfolio_warpper main {
     margin-left: 180px;
+  }
+  .protfolio_warpper main .section h1 {
+    font-size: 96px;
   }
   .protfolio .toggle_icon {
     display: none;

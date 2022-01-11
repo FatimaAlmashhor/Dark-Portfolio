@@ -13,10 +13,11 @@
     width: $nav_width;
     &_logo{
         --logo_height:61px ; 
-        width: 61px ;
-        height: var(--height);
         img{
-            width: inherit;
+            width: 40%;
+            margin-left: 17px;
+            margin-top:20px;
+            margin-bottom: 20px;
         }
     }
     &_list{

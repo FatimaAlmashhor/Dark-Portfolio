@@ -21,6 +21,7 @@
     background:  $main_bg_color ;
     color : $primary_white_text ; 
     font-family: $main_font_family;
+    // background-color: #0A66C2;
     .toggle_icon{
         position: fixed;
         right: 0px;
@@ -62,7 +63,7 @@
                     display: block;
                     width: 18px;
                     margin-top:10px;
-                    overflow: hidden;
+                    // overflow: hidden;
                     svg{
                         fill: white
                     }
@@ -116,24 +117,24 @@
                 @include flex-col ;
                 justify-content: center;
                 h1{
-                    font-size: $xxl_font_size;
+                    font-size: $lg_font_size;
                     letter-spacing: 2px;
+                    overflow-wrap: break-word;
                 }
                 &_about{
-                    max-width: $max-width;
+                    // max-width: $max-width;
                     display: grid;
                     grid-template-columns: 1fr;
                     > div{
                         margin: 0px 30px 0px 0px;    
                     }
                     &_paragraph{
-                        padding : 30px;
-                        display: inline-block;
-                        vertical-align: top;
+                        padding : 10px 0px;
+                        // display: inline-block;
                     }
                     &_skills{
                         padding-top : 20px;
-                        padding-right:70px;
+                        // padding-right:70px;
 
                         @mixin progressColor($color , $rate) {
                             content: "";
@@ -185,7 +186,6 @@
                 &_lang{
                     // position: relative;
                     margin: 6rem  auto;
-                    // overflow: hidden;
                     &_warpper{
                         position: absolute;
                         // top: 0px;
@@ -194,8 +194,8 @@
                         margin-left: 0px;
                         @include flex-row;
                         @include transition;
-                        -webkit-animation: scrolling-left 10s linear infinite;
-                        animation: scrolling-left 10s linear infinite;
+                        // -webkit-animation: scrolling-left 10s linear infinite;
+                        // animation: scrolling-left 10s linear infinite;
                         @include keyframes(scrolling-left){
                             0% {transform: translateX(100%);
                                 -webkit-transform: translateX(100%);}
@@ -205,7 +205,7 @@
                         .lang-items{
                             display:inline-block;
                             margin: 0px 12px;
-                            font-size: $md_font_size;
+                            // font-size: $md_font_size;
                             font-weight: lighter;
                             opacity: 0.6;
                             background-color: transparent;
@@ -240,7 +240,7 @@
                 }
                 &_work{
                     @include flex-col ;
-                    max-width: $max-width;
+                    // max-width: $max-width;
                     margin: clamp(5% , 10% , 15%) 0px ;
                     .project{
                         padding: 10px;
@@ -282,7 +282,7 @@
                     justify-content: center;
                     align-items: center;
                     .take-me-up{
-                        position: absolute;
+                        // position: absolute;
                         top: 0px;
                         left: -30px ;
                         // transform: rotateX(90deg);
@@ -293,8 +293,11 @@
                         grid-template-columns: 1fr 1fr;
                         &_skills{
                             padding-top : 0px;
-
+                            &_paragraph{
+                                padding: 10px 30px;
+                            }
                         }
+                        
                     }
                     &_work{
                         .project{
@@ -322,6 +325,11 @@
             main{
                 margin-left : $nav_width;
                 // width: $main_width 
+                .section{
+                    h1{
+                        font-size: $xxl_font_size;
+                    }
+                }
             }
         }
         .toggle_icon{
