@@ -927,7 +927,7 @@ footer.dark {
 
 .protfolio_warpper main .section_work .project .project_details_links .live_link {
   position: relative;
-  margin: 0px 3rem;
+  margin: 0px 2rem;
   text-transform: uppercase;
   font-size: 1.2rem;
 }
@@ -992,7 +992,7 @@ footer.dark {
 .protfolio_warpper main .section footer {
   position: relative;
   height: 30px;
-  background: red;
+  background: #FF6464;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

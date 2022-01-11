@@ -256,7 +256,7 @@
                                 padding: 10px;
                                 .live_link{
                                     position: relative;
-                                    margin: 0px 3rem;
+                                    margin: 0px 2rem;
                                     text-transform: uppercase;
                                     font-size: 1.2rem;
                                     &::after{
@@ -313,7 +313,7 @@
                 footer{
                     position: relative;
                     height: 30px;
-                    background: red;
+                    background: $primery_red;
                     @include flex-col;
                     justify-content: center;
                     align-items: center;
@@ -324,7 +324,6 @@
                         transform: rotate(-90deg);
                         &::after{
                             content:  '  ->';
-                            animation: ;
                         }
                     }
                 }
