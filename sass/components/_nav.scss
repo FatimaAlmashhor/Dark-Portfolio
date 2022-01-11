@@ -1,90 +1,54 @@
+
 .nav{
-    position: sticky;
-    z-index: 99999;
-    width: 0px;
+    position: fixed;
+    // display: block;
     transition: 0.3s ease;
-    overflow: hidden;
     top:0px ;
     left:0px ;     
     margin:0px;
     padding :4px ;
-    height: 100vh;
-    &_list{
-        margin-top:20px;
-        margin-left: 10px;;
-    }
-}
-
-// desktop 
-@media screen and(min-width : $desktop) {
-    .nav{
-        --nav-padding:4px ; 
-        z-index: inherit;
-        background-color: $main_bg_color;
-        width: $nav_width;
-        &_logo{
-            --logo_height:61px ; 
-            
-            width: 61px ;
-            height: var(--height);
-            img{
-                width: inherit;
-            }
-        
+    height: fit-content;
+    --nav-padding:9px ; 
+    z-index: inherit;
+    width: $nav_width;
+    &_logo{
+        --logo_height:61px ; 
+        width: 61px ;
+        height: var(--height);
+        img{
+            width: inherit;
         }
-        &_list{
-            padding-left: 10px;   
+    }
+    &_list{
+        padding-left: 10px;   
+        position: relative;
+        margin-left: var(--nav-padding);
+        &::before{
+            content: '';
+            position: absolute;
+            width : 2px;
+            height: 260px;
+            margin: 0px;
+            background-color : rgb(235, 235, 235);
+            left: 0px;
+            top: calc(var(--nav-padding) - 5px) ;
+            opacity: 0.6;
+        }
+        &:after{
+            content: 'fatima.alamshhor@gmail.com';
+            position: absolute;
+            width : 1px;
+            margin: 0px;
+            left: 0px;
+            top: 480px ;
+            opacity: 0.9;
+            transform: rotate(-90deg);
+        }
+        li{
+            line-height: 45px;
             position: relative;
-            &::before{
-                content: '';
-                position: absolute;
-                width : 2px;
-                height: 260px;
-                margin: 0px;
-                background-color : rgb(235, 235, 235);
-                left: 0px;
-                top: calc(var(--nav-padding) - 5px) ;
-                opacity: 0.6;
-            }
-            &:after{
-                content: 'fatima.alamshhor@gmail.com';
-                position: absolute;
-                width : 1px;
-                margin: 0px;
-                left: 0px;
-                top: 460px ;
-                transform: rotate(-90deg);
-            }
-            li{
-                line-height: 45px;
-                position: relative;
-                height: 45px;
-                &:hover{
-                    &:before{
-                        content : ''; 
-                        position :absolute;
-                        width : 3px ;
-                        left: -10px;
-                        border-radius: 10px;
-                        z-index: 5;
-                        height: inherit;
-                        background-color: $primery_red ;
-                    }
-                }
-               
-            }
-            .active{
-                // padding: 7px 20px;
-                &::after{
-                    content : ''; 
-                    position :absolute;
-                    width : 100% ;
-                    left: -8px;
-                    z-index: 5;
-                    height: inherit;
-                    background-color: $primery_blue ;
-                    opacity: 0.4;
-                }
+            height: 45px;
+            &:hover{
                 &:before{
                     content : ''; 
                     position :absolute;
@@ -96,6 +60,50 @@
                     background-color: $primery_red ;
                 }
             }
+           
+        }
+        .active{
+            // padding: 7px 20px;
+            &::after{
+                content : ''; 
+                position :absolute;
+                width : 100% ;
+                left: -8px;
+                z-index: 5;
+                height: inherit;
+                background-color: $primery_blue ;
+                opacity: 0.4;
+            }
+            &:before{
+                content : ''; 
+                position :absolute;
+                width : 3px ;
+                left: -10px;
+                border-radius: 10px;
+                z-index: 5;
+                height: inherit;
+                background-color: $primery_red ;
+            }
+        }
+    }
+}
+// desktop 
+@media screen and(max-width : $desktop) {
+        .nav{
+        position: fixed;
+        z-index: 99999;
+        width: 0px;
+        // display: none;
+        padding: 0px;
+        margin: 0px;
+        // overflow-y: auto;
+        overflow : hidden ;
+        background-color: blanchedalmond;
+        // background-color: $main_bg_color;
+        align-self: flex-start;
+        &_list{
+            margin-top:20px;
+            margin-left: 10px;;
         }
     }
 }

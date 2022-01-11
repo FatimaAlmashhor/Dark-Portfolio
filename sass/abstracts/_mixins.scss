@@ -118,3 +118,7 @@ $breakpoints: (
   display: flex;
   flex-direction: row;
 }
+
+@mixin transition($type : all, $duration : 400ms ,$method :ease) {
+    transition: $type $duration $method;
+}

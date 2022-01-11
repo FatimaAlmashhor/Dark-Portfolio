@@ -9,6 +9,7 @@
     position: relative;
     cursor: pointer;
     margin:10px;
+    width:fit-content ;
     &::after{
       content: '';
       position: absolute;

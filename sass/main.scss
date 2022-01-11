@@ -26,6 +26,7 @@
         // width: 100%;
         position: fixed;
         right: 0px;
+        top:15px;
         @include flex-row;  
         justify-content: end;
         z-index: 1000;
@@ -34,6 +35,18 @@
             background-color: $primery_red;
             width: auto;
             padding: 10px;
+            
+            span {
+                display: none;
+                color:rgb(109, 109, 109);
+                transition: width 500ms ease-in;
+            }
+            &:hover{
+                width:6.5rem;
+                span {
+                    display: inline;
+                }
+            }
         }
     }
     .aside-social{
@@ -92,14 +105,15 @@
             width:100%;
             padding: 10px ;
             margin :0px auto ;
-            // max-width: 1600px;
+            margin-left: 0px;
+            @include transition() ;
             // padding: 0px clamp(5% , 10% ,15%);
             .section{
                 position: relative;
                 width: inherit;
                 min-height: 100vh;
                 padding : $section_padding;
-                margin: 20px 0px;
+                // margin: 20px 0px;
                 @include flex-col ;
                 justify-content: center;
                 h1{
@@ -115,7 +129,7 @@
 
                     &_skills{
                         padding-top : 20px;
-                        // width: 100%;
+                        width: 100%;
                         @mixin progressColor($color , $rate) {
                             content: "";
                             position: absolute;
@@ -152,23 +166,86 @@
                         }
                         .progress-yellow{
                             &:before{
-                                @include progressColor($primery_blue , 70%)
+                                @include progressColor($secondary_yellow , 60%)
                             }
                         }
                         .progress-pink{
                             &:before{
-                                @include progressColor($primery_blue , 70%)
+                                @include progressColor($secondary_pink , 70%)
                             }
+                        }
+                    }
+                    
+                }
+                &_lang{
+                    // position: relative;
+                    width : inherit;
+                    margin: 6rem  auto;
+                    // overflow: hidden;
+                    &_warpper{
+                        position: absolute;
+                        // top: 0px;
+                        left: 0px;
+                        padding: 0px;
+                        margin-left: 0px;
+                        width: 100%;
+                        @include flex-row;
+                        @include transition;
+                        -webkit-animation: scrolling-left 10s linear infinite;
+                        animation: scrolling-left 10s linear infinite;
+                        @include keyframes(scrolling-left){
+                            0% {transform: translateX(100%);
+                                -webkit-transform: translateX(100%);}
+                              100% {transform: translateX(-100%);
+                                  -webkit-transform: translateX(-100%);}
+                        }
+                        .lang-items{
+                            display:inline-block;
+                            margin: 0px 12px;
+                            font-size: $md_font_size;
+                            font-weight: lighter;
+                            opacity: 0.6;
+                            background-color: transparent;
+                            color: transparent;
+                            -webkit-text-stroke-width: 1px;
+                            -webkit-text-stroke-color: white;
                         }
                     }
                 }
                 &_work{
                     @include flex-col ;
                     .project{
-                        width: 100&;
+                        width: 100%;
                         padding: 10px;
                         margin :10px 0px ;
                         @include flex-col;
+                    }
+                }
+               
+                &_more-work{
+                    width: inherit;
+                    overflow: hidden;
+                    &_warpper{
+                        width: 100%;
+                        overflow: hidden;
+                        height: auto;
+                        // ul 
+                        .more-projects-gallery{
+                            width: 100%;
+                            display: flex;
+                            flex-wrap: wrap;
+                           
+                            .gallery_item{
+                                width: 20% ;
+                                height: auto;
+                                position: relative;
+                                overflow: hidden;
+                                img{
+                                    width: 100%;
+                                    height: auto;
+                                }
+                            }
+                        }
                     }
                 }
                 &__contanct{
@@ -177,7 +254,7 @@
                 }
                 @media screen and(min-width : $desktop) {
                     &_about{
-                        grid-template-columns: 2fr 1fr;
+                        grid-template-columns: 1fr 1fr;
                         &_skills{
                             padding-top : 0px;
 
@@ -199,11 +276,9 @@
     @media screen and (min-width: $desktop) {
         &_warpper{
             @include flex-row ;
-            // background-color: rgb(196, 196, 64);
             main{
-                // margin-left : $nav_width;
+                margin-left : $nav_width;
                 width: $main_width 
-                // background-color: white;
             }
         }
         .toggle_icon{

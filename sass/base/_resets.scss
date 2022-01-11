@@ -6,6 +6,7 @@
 body , html {
     overflow-x:  hidden;
     scroll-behavior: smooth;
+    font-family: "Open Sans",sans-serif;
 }
 
 a{
@@ -32,7 +33,7 @@ ul {
 }
 .peimary-text{
     font-size :$lg_font_size ;
-    font-family: $second_font_family;
+    font-family: $main_font_family;
 }
 
 
