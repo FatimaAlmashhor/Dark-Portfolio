@@ -26,7 +26,7 @@
         &::before{
             content: '';
             position: absolute;
-            width : 2px;
+            width : 1px;
             height: 260px;
             margin: 0px;
             background-color : rgb(235, 235, 235);
@@ -40,8 +40,9 @@
             width : 1px;
             margin: 0px;
             left: 0px;
-            top: 480px ;
+            top: 430px ;
             opacity: 0.9;
+            font-size: 12px;
             transform: rotate(-90deg);
         }
         li{
@@ -64,16 +65,19 @@
         }
         .active{
             // padding: 7px 20px;
-            &::after{
-                content : ''; 
-                position :absolute;
-                width : 100% ;
-                left: -8px;
-                z-index: 5;
-                height: inherit;
-                background-color: $primery_blue ;
-                opacity: 0.4;
+            a{
+                z-index: -1;
+                // &::after{
+                    content : ''; 
+                    position :absolute;
+                    width : 100% ;
+                    z-index: inherit;
+                    height: inherit;
+                    background-color: rgba($primery_blue , 0.3) ;
+                    // opacity: 0.4;
+                // }
             }
+            
             &:before{
                 content : ''; 
                 position :absolute;

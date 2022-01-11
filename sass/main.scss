@@ -21,9 +21,7 @@
     background:  $main_bg_color ;
     color : $primary_white_text ; 
     font-family: $main_font_family;
-    // max-width: 100%;
     .toggle_icon{
-        // width: 100%;
         position: fixed;
         right: 0px;
         top:15px;
@@ -99,10 +97,11 @@
         }
     }
     &_warpper{
+        
         @include flex-row ;
         // the left side of the project 
         main{
-            width:100%;
+            // background-color: #0A66C2;
             padding: 10px ;
             margin :0px auto ;
             margin-left: 0px;
@@ -110,9 +109,9 @@
             // padding: 0px clamp(5% , 10% ,15%);
             .section{
                 position: relative;
-                width: inherit;
                 min-height: 100vh;
                 padding : $section_padding;
+                
                 // margin: 20px 0px;
                 @include flex-col ;
                 justify-content: center;
@@ -121,15 +120,21 @@
                     letter-spacing: 2px;
                 }
                 &_about{
+                    max-width: $max-width;
                     display: grid;
                     grid-template-columns: 1fr;
                     > div{
                         margin: 0px 30px 0px 0px;    
                     }
-
+                    &_paragraph{
+                        padding : 30px;
+                        display: inline-block;
+                        vertical-align: top;
+                    }
                     &_skills{
                         padding-top : 20px;
-                        width: 100%;
+                        padding-right:70px;
+
                         @mixin progressColor($color , $rate) {
                             content: "";
                             position: absolute;
@@ -143,7 +148,7 @@
                         .skill{
                             position: relative;
                             padding: 0px 0px 30px 0px ;
-                            width: inherit;
+
                             &:after{
                                 content: "";
                                 position: absolute;
@@ -179,7 +184,6 @@
                 }
                 &_lang{
                     // position: relative;
-                    width : inherit;
                     margin: 6rem  auto;
                     // overflow: hidden;
                     &_warpper{
@@ -188,7 +192,6 @@
                         left: 0px;
                         padding: 0px;
                         margin-left: 0px;
-                        width: 100%;
                         @include flex-row;
                         @include transition;
                         -webkit-animation: scrolling-left 10s linear infinite;
@@ -237,39 +240,29 @@
                 }
                 &_work{
                     @include flex-col ;
+                    max-width: $max-width;
+                    margin: clamp(5% , 10% , 15%) 0px ;
                     .project{
-                        width: 100%;
                         padding: 10px;
-                        margin :10px 0px ;
+                        margin :50px 0px ;
                         @include flex-col;
+                        .project_details{
+                            margin: 10px 30px ;
+                            
+                        }
+                        .text-left{
+                           text-align: left ; 
+                        //    align-self: center;
+                           justify-self: flex-start;
+                           width: 40%;
+                        }
                     }
                 }
                
                 &_more-work{
-                    width: inherit;
-                    overflow: hidden;
-                    &_warpper{
-                        width: 100%;
-                        overflow: hidden;
-                        height: auto;
-                        // ul 
-                        .more-projects-gallery{
-                            width: 100%;
-                            display: flex;
-                            flex-wrap: wrap;
-                           
-                            .gallery_item{
-                                width: 20% ;
-                                height: auto;
-                                position: relative;
-                                overflow: hidden;
-                                img{
-                                    width: 100%;
-                                    height: auto;
-                                }
-                            }
-                        }
-                    }
+                    margin: clamp(5% , 10% , 15%) 0px ;
+                    // &_warpper{
+                    // }
                 }
                 &_contenct{
                     @include flex-col;
@@ -277,15 +270,12 @@
                         min-width: 60%;
                         padding-bottom: 60px;
                         form{
-                            width: 100%;
                             padding-right: 20px;
-
                         }
                     }
                 }
                 footer{
                     position: relative;
-                    width:100%;
                     height: 30px;
                     // background: red;
                     @include flex-col;
@@ -310,8 +300,10 @@
                         .project{
                             @include flex-row;
                             height: inherit;
-                            width: 100%;
                            
+                        }
+                        .flex-reverse{
+                            flex-direction: row-reverse;
                         }
                     }
                     &_contenct{
@@ -329,7 +321,7 @@
             @include flex-row ;
             main{
                 margin-left : $nav_width;
-                width: $main_width 
+                // width: $main_width 
             }
         }
         .toggle_icon{

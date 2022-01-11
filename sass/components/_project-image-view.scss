@@ -1,8 +1,9 @@
 .project_img-view{
+    position: relative;
     width: 100%;
     height: 346px;
     margin-bottom: 20px;
-    overflow: hidden;
+    // overflow: hidden;
     cursor: pointer;
     &:hover{
         .project_view{
@@ -19,9 +20,9 @@
                 transform:scale(0);
             }
         }
-        &[data-project='*']{
-          background-size: 2rem;
+        [data-project='x']{
           border: 2px solid red;
+          background: red;
         }
     }
     .project_view{
@@ -56,18 +57,45 @@
             border-radius: 50%;
             background-color: lightcoral;
             @include center('both');
+            top:20%;
+            left: 40%;
             transform:scale(1);
             transition: 0.4s ease-in-out;
         }
     }
-
     .payoo{
-        
         background: url('../../assets/images/payoo.png');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
 
+    }
+    .exhale{
+        background: url('../../assets/images/exhale.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: inherit;
+        border:2px solid red ;
+        top:-20px ;
+        left: -10px;
+        z-index: -1;
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: inherit;
+        border:2px solid $primery_blue ;
+        top:-10px ;
+        left: 0px;
+        z-index: 1;
     }
 }
 @media screen and (min-width : $desktop) {
