@@ -90,6 +90,10 @@ ul {
   margin: 0px clamp(0%, 10%, 20%);
 }
 
+.mb {
+  margin-bottom: clamp(0%, 10%, 20%);
+}
+
 .hilght-text {
   position: relative;
   font-size: 24px;

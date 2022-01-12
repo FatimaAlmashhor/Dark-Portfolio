@@ -53,3 +53,7 @@ ul {
 .mx{
     margin: 0px clamp(0%, 10%, 20%);
 }
+
+.mb{
+    margin-bottom: clamp(0%, 10%, 20%)
+}
