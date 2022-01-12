@@ -124,3 +124,36 @@ $breakpoints: (
 @mixin transition($type : all, $duration : 400ms ,$method :ease) {
     transition: $type $duration $method;
 }
+
+
+  // theme toggling 
+  $themes: (
+    dark: (
+      'bg-color': $main_bg_color,
+      'main-text': $primary_white_text,
+      'second-text': $dark_decondary_text_color,
+    ),
+    light: (
+      'bg-color':  $dark_bg_color,
+      'main-text': $dark_primary_text_color,
+      'second-text': $dark_decondary_text_color
+    )
+  );
+  
+  @mixin themed() {
+    @each $theme, $map in $themes {
+      .#{$theme} & {
+        $theme-map: () !global;
+        @each $key, $submap in $map {
+          $value: map-get(map-get($themes, $theme), '#{$key}');
+          $theme-map: map-merge($theme-map, ($key: $value)) !global;
+        }
+        @content;
+        $theme-map: null !global;
+      }
+    }
+  }
+  
+  @function toggle-theme($key) {
+    @return map-get($theme-map, $key);
+  }

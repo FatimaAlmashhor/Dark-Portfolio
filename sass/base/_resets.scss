@@ -3,6 +3,14 @@
     padding : 0px ;
     box-sizing: border-box;
 }
+
+:root{
+    --bg-color: #{$dark_bg_color} ;
+    --main-text-color: #{$dark_primary_text_color};
+    --second-text-color:  #{$dark_decondary_text_color};
+    --toggle-button-color:#{$dark_toggle-button};
+    --toggle-inner-color:#{$dark_toggle-inner};
+}
 body , html {
     // overflow-x:  hidden;
     scroll-behavior: smooth;

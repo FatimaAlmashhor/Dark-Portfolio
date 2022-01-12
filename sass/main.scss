@@ -18,8 +18,8 @@
 
 .protfolio{
     position: relative;
-    background:  $main_bg_color ;
-    color : $primary_white_text ; 
+    background-color:  var(--bg-color) ;
+    color: var(--main-text-color); 
     font-family: $main_font_family;
     // background-color: #0A66C2;
     .toggle_icon{
@@ -102,18 +102,15 @@
         @include flex-row ;
         // the left side of the project 
         main{
-            // background-color: #0A66C2;
             padding: 10px ;
             margin :0px auto ;
             margin-left: 0px;
             @include transition() ;
-            // padding: 0px clamp(5% , 10% ,15%);
             .section{
                 position: relative;
                 min-height: 100vh;
                 padding : $section_padding;
-                
-                // margin: 20px 0px;
+
                 @include flex-col ;
                 justify-content: center;
                 h1{
@@ -378,4 +375,11 @@
         
     }
 
+}
+.light{
+    --bg-color: #{$light_bg_color } ;
+    --main-text-color: #{$light_primary_text_color};
+    --second-text-color :#{$light_decondary_text_color} ;
+    --toggle-button-color:#{$light_toggle-button};
+    --toggle-inner-color:#{$light_toggle-inner};
 }

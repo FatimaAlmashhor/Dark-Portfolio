@@ -15,6 +15,14 @@ Files inside this folder can contain global styles used in the project.
           box-sizing: border-box;
 }
 
+:root {
+  --bg-color: #1D1D1D ;
+  --main-text-color: #FFFFFF;
+  --second-text-color:  #D2D2D2;
+  --toggle-button-color:#FFFFFF;
+  --toggle-inner-color:#1D1D1D;
+}
+
 body, html {
   scroll-behavior: smooth;
   font-family: "Open Sans",sans-serif;
@@ -90,7 +98,6 @@ ul {
   position: relative;
   font-size: 24px;
   font-weight: lighter;
-  mix-blend-mode: difference;
 }
 
 .hilght-text::before {
@@ -116,7 +123,7 @@ ul {
   width: 100%;
   font-weight: bold;
   height: 100%;
-  color: white;
+  color: var(--main-text-color);
   top: -3px;
   left: -3px;
   position: absolute;
@@ -127,14 +134,14 @@ ul {
   width: 100%;
   font-weight: bold;
   height: 100%;
-  color: white;
+  color: var(--main-text-color);
   top: -3px;
   left: -3px;
   position: absolute;
 }
 
 .secondary-text {
-  color: #D2D2D2;
+  color: var(--second-text-color);
   font-size: 24px;
   font-family: "Ropa Sans", sans-serif;
   overflow-wrap: break-word;
@@ -150,7 +157,7 @@ ul {
   font-size: 20px;
   font-family: "Ropa Sans", sans-serif;
   overflow-wrap: break-word;
-  color: #ebebeb;
+  color: var(--second-text-color);
 }
 
 @media screen and (max-width: 1022px) {
@@ -216,8 +223,8 @@ input, textarea {
   min-width: 100%;
   margin-bottom: 9px;
   border: 0px;
-  background-color: #0d0d11;
-  color: white;
+  background-color: --second-text-color;
+  color: var(--main-text-color);
   resize: none;
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
@@ -230,9 +237,14 @@ input, textarea {
   left: 0px;
   margin: 0px;
   padding: 4px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   --nav-padding:9px ;
   z-index: inherit;
   width: 180px;
@@ -250,6 +262,9 @@ input, textarea {
 }
 
 .nav_list {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
   padding-left: 10px;
   position: relative;
   margin-left: var(--nav-padding);
@@ -394,6 +409,8 @@ input, textarea {
   height: 200px;
   border-radius: 50%;
   background-color: lightcoral;
+  mix-blend-mode: difference;
+  color: white;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -407,7 +424,7 @@ input, textarea {
   transition: 0.4s ease-in-out;
 }
 
-.project_img-view .payoo {
+.project_img-view [data-project='Payoo'] {
   background: url("../../assets/images/payoo.png");
   background-size: cover;
   background-repeat: no-repeat;
@@ -603,6 +620,73 @@ input, textarea {
   background-position: center;
 }
 
+.toggle-switch {
+  position: relative;
+  width: 80px;
+  margin: auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.toggle-lable {
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  background-color: var(--toggle-button-color);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.toggle-checkout {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.toggle-checkout:checked ~ .slider {
+  background-color: var(--toggle-button-color);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 7px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 10px -4px 0px 0px var(--toggle-inner-color);
+          box-shadow: inset 10px -4px 0px 0px var(--toggle-inner-color);
+  background-color: var(--toggle-button-color);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.toggle-checkout:checked ~ .slider::before {
+  -webkit-transform: translateX(35px);
+          transform: translateX(35px);
+  background-color: var(--toggle-inner-color);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 /* Additonal Component Stylesheets */
 /*
 This file is used to contain all component imports.
@@ -618,8 +702,8 @@ footer.dark {
 
 .protfolio {
   position: relative;
-  background: #1D1D1D;
-  color: #FFFFFF;
+  background-color: var(--bg-color);
+  color: var(--main-text-color);
   font-family: "Roboto", sans-serif;
 }
 
@@ -1116,5 +1200,13 @@ footer.dark {
   .protfolio .toggle_icon {
     display: none;
   }
+}
+
+.light {
+  --bg-color: #DDD9D4 ;
+  --main-text-color: #1D1D1D;
+  --second-text-color:gray ;
+  --toggle-button-color:gray;
+  --toggle-inner-color:#FFFFFF;
 }
 /*# sourceMappingURL=main.css.map */

@@ -3,7 +3,7 @@
     font-size: $sm_font-size;
     // color:black;
     font-weight: lighter;
-    mix-blend-mode: difference;
+    // mix-blend-mode: difference;
     &::before{
         content: '';
         position: absolute;
@@ -30,7 +30,7 @@
         width: 100%;
         font-weight: bold;
         height: 100%;
-        color: white;
+        color: var(--main-text-color);
         // mix-blend-mode: saturation;
         top:-3px;
         left: -3px;
@@ -43,7 +43,7 @@
         width: 100%;
         font-weight: bold;
         height: 100%;
-        color: white;
+        color:  var(--main-text-color);;
         // mix-blend-mode: saturation;
         top:-3px;
         left: -3px;
@@ -51,7 +51,7 @@
     }
 }
 .secondary-text{
-    color : $secondry_gray_text ;
+    color : var(--second-text-color) ;
     font-size :$sm_font_size ;
     font-family: $second_font_family;
     overflow-wrap: break-word;
@@ -65,7 +65,7 @@
     font-size :20px ;
     font-family: $second_font_family;
     overflow-wrap: break-word;
-    color: $third_gray_text;
+    color: var(--second-text-color);
 }
 
 // desktop

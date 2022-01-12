@@ -7,7 +7,9 @@
     left:0px ;     
     margin:0px;
     padding :4px ;
-    height: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     --nav-padding:9px ; 
     z-index: inherit;
     width: $nav_width;
@@ -21,6 +23,7 @@
         }
     }
     &_list{
+        flex: 2;
         padding-left: 10px;   
         position: relative;
         margin-left: var(--nav-padding);
