@@ -64,7 +64,7 @@
             transition: 0.4s ease-in-out;
         }
     }
-    .payoo{
+    [data-project='Payoo']{
         background: url('../../assets/images/payoo.png');
         background-size: cover;
         background-repeat: no-repeat;
