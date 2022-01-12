@@ -106,7 +106,7 @@
         margin: 0px;
         // overflow-y: auto;
         overflow : hidden ;
-        background-color: blanchedalmond;
+        background: var(--bg-color);
         // background-color: $main_bg_color;
         align-self: flex-start;
         &_list{

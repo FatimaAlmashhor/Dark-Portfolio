@@ -14,8 +14,8 @@
     <title>Fatima Amin Almashhor</title>
 </head>
 
-<body class="protfolio light">
-    <div class="toggle_icon">
+<body class="protfolio">
+    <div class="toggle_icon" id='menu'>
         <p>Show <span> Menu</span></p>
     </div>
     <!-- this part it is uniq state for the contact us in fixed postion for md and lg page -->
@@ -47,7 +47,7 @@
     <!-- devided the page into tow section -->
     <div class="protfolio_warpper">
         <!-- nav in the left of the page should take 3/12 -->
-        <nav class="nav">
+        <nav class="nav" id='nav'>
             <a href="#home" class="nav_logo">
                 <img src="./assets/images/logo.png" alt='logo' />
             </a>
@@ -83,7 +83,7 @@
                 <div class="section_numberic__lower">O.1</div>
             </header>
             <!-- about section -->
-            <section id="about" class="section ">
+            <section id="about" class="section mx">
                 <div class="section_numberic__upper">O.2</div>
                 <!-- flex columns -->
                 <h2 class="peimary-text"><span class="color-red">A</span>bout me.</h2>
@@ -144,9 +144,8 @@
                 </div> -->
                 <div class="section_numberic__lower">O.2</div>
             </section>
-
             <!-- work section -->
-            <section id="work" class="section">
+            <section id="work" class="section mx">
                 <div class="section_numberic__upper">O.3</div>
                 <h2 class="peimary-text"><span class="color-red">M</span>y Work.</h2>
                 <div class="section_work">
@@ -197,45 +196,44 @@
                 <div class="section_numberic__lower">O.3</div>
             </section>
             <!-- this is services  sections -->
-            <section class="">
+            <section class="mx section">
+                <div class="section_numberic__upper">O.4</div>
                 <div class="section_servcies">
                     <h2 class="peimary-text"><span class="color-red">S</span>ervcies.</h2>
                     <!-- grid  -->
-                    <ul>
-                        <li>
-                            <img />
-                            <!-- upper cover when hover  -->
-                            <div class="cover-img-view">
-                                <div class="cover-img-view_cirecle test btn">Web design</div>
-                            </div>
-                        </li>
-                        <li>
-                            <img />
-                            <!-- upper cover when hover  -->
-                            <div class="cover-img-view">
-                                <div class="cover-img-view_cirecle test btn">Web Developer</div>
-                            </div>
-                        </li>
-                        <li>
-                            <img />
-                            <!-- upper cover when hover  -->
-                            <div class="cover-img-view">
-                                <div class="cover-img-view_cirecle test btn">SEO</div>
-                            </div>
-                        </li>
-                        <li>
-                            <img />
-                            <!-- upper cover when hover  -->
-                            <div class="cover-img-view">
-                                <div class="cover-img-view_cirecle test btn">UI /UX</div>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="card-warpper">
+                        <ul class="cards-list">
+                            <li class="card">
+                                <!-- upper cover when hover  -->
+                                <div class="card_content">
+                                    <div class="">Web design</div>
+                                </div>
+                            </li>
+                            <li class="card">
+                                <!-- upper cover when hover  -->
+                                <div class="card_content">
+                                    <div class="">Web Developer</div>
+                                </div>
+                            </li>
+                            <li class="card">
+                                <!-- upper cover when hover  -->
+                                <div class="card_content">
+                                    <div class="">SEO</div>
+                                </div>
+                            </li>
+                            <li class="card">
+                                <!-- upper cover when hover  -->
+                                <div class="card_content">
+                                    <div class="">UI /UX</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </section>
             <!-- here more projects -->
-            <section class="section">
-                <div class="section_numberic__upper">O.4</div>
+            <section class="section mx">
+                <div class="section_numberic__upper">O.5</div>
                 <h2 class="peimary-text"><span class="color-red">M</span>ore ...</h2>
                 <div class="section_more-work">
                     <div class="section_more-work_warpper">
@@ -261,8 +259,8 @@
                 <div class="section_numberic__lower">O.4</div>
             </section>
             <!-- contanct me -->
-            <section id="contanct" class="section">
-                <div class="section_numberic__upper">O.5</div>
+            <section id="contanct" class="section mx">
+                <div class="section_numberic__upper">O.6</div>
                 <h2 class="peimary-text"><span class="color-red">G</span>et In Touch</h2>
                 <div class="section_contenct">
                     <div class="contanct_form">
@@ -316,6 +314,7 @@
         </main>
     </div>
     <script src="./dist/js/darkMode.js"></script>
+    <script src="./dist/js/toggleMenu.js"></script>
 </body>
 
 </html>

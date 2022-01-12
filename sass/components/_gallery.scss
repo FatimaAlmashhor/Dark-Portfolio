@@ -15,8 +15,12 @@
         &:hover{
             transition: 0.4s ease-in-out;
             .small-project{
-                background-size: 160%;
-
+                background-size: 180%;
+                display: inline-block;
+                -moz-transition: all 5s ease-in-out;
+                -webkit-transition: all 5s ease-in-out;
+                -o-transition: all 5s ease-in-out;
+                transition: all 5s ease-in-out;
                 &::before{
                     content : '' ;
                     position: absolute;

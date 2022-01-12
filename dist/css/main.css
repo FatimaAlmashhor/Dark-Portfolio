@@ -21,6 +21,8 @@ Files inside this folder can contain global styles used in the project.
   --second-text-color:  #D2D2D2;
   --toggle-button-color:#FFFFFF;
   --toggle-inner-color:#1D1D1D;
+  --nav-bg:#1D1D1D;
+  --input-color: black;
 }
 
 body, html {
@@ -45,16 +47,6 @@ ul {
 
 .color-blue {
   color: #5CDCF8;
-}
-
-.section_more-work ul li {
-  min-width: 200px;
-}
-
-.test {
-  background-color: #5CDCF8;
-  padding: 20px;
-  margin: 10px;
 }
 
 .flex-col {
@@ -92,6 +84,10 @@ ul {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.mx {
+  margin: 0px clamp(0%, 10%, 20%);
 }
 
 .hilght-text {
@@ -180,10 +176,10 @@ Files inside this folder should contain all styles relating to a reusable compon
 .btn {
   display: block;
   border-color: transparent;
-  padding: 10px 30px;
+  padding: 15px 34px;
   background-color: transparent;
   color: #FF6464;
-  border: 1px solid #FF6464;
+  border: 1.5px solid #FF6464;
   position: relative;
   cursor: pointer;
   margin: 10px;
@@ -199,7 +195,7 @@ Files inside this folder should contain all styles relating to a reusable compon
   top: 2px;
   left: 4px;
   height: 100%;
-  border: 1px solid #5CDCF8;
+  border: 2px solid #5CDCF8;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
@@ -214,7 +210,7 @@ Files inside this folder should contain all styles relating to a reusable compon
 }
 
 .btn:hover {
-  background-color: rgba(160, 41, 41, 0.6);
+  color: white;
 }
 
 input, textarea {
@@ -223,7 +219,7 @@ input, textarea {
   min-width: 100%;
   margin-bottom: 9px;
   border: 0px;
-  background-color: --second-text-color;
+  background-color: var(--input-color);
   color: var(--main-text-color);
   resize: none;
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -341,7 +337,7 @@ input, textarea {
     padding: 0px;
     margin: 0px;
     overflow: hidden;
-    background-color: blanchedalmond;
+    background: var(--bg-color);
     -ms-flex-item-align: start;
         align-self: flex-start;
   }
@@ -472,7 +468,7 @@ input, textarea {
   font-weight: bold;
   font-family: "Ropa Sans", sans-serif;
   position: absolute;
-  opacity: 0.2;
+  opacity: 0.1;
   top: 0px;
   left: -20px;
   color: gray;
@@ -496,7 +492,7 @@ input, textarea {
   bottom: 28px;
   background-color: white;
   right: 90px;
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .more-projects-gallery {
@@ -526,7 +522,10 @@ input, textarea {
 }
 
 .more-projects-gallery .gallery_item:hover .small-project {
-  background-size: 160%;
+  background-size: 180%;
+  display: inline-block;
+  -webkit-transition: all 5s ease-in-out;
+  transition: all 5s ease-in-out;
 }
 
 .more-projects-gallery .gallery_item:hover .small-project::before {
@@ -685,6 +684,82 @@ input, textarea {
   background-color: var(--toggle-inner-color);
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.card-warpper {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.card-warpper .cards-list {
+  margin-top: 20px;
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  row-gap: 10px;
+  -ms-grid-columns: (minmax(180px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+}
+
+.card-warpper .cards-list .card {
+  position: relative;
+  background-color: var(--input-color);
+  width: 100%;
+  padding: 80px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  z-index: 1;
+  overflow: hidden;
+}
+
+@-webkit-keyframes border-animation {
+  to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes border-animation {
+  to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 1022px) {
+  .card-warpper .cards-list {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+  }
 }
 
 /* Additonal Component Stylesheets */
@@ -1008,7 +1083,7 @@ footer.dark {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin: clamp(5%, 10%, 15%) 0px;
+  margin: clamp(5%, 10%, 15%) 0px 0px;
 }
 
 .protfolio_warpper main .section_work .project {
@@ -1073,7 +1148,7 @@ footer.dark {
 }
 
 .protfolio_warpper main .section_more-work {
-  margin: clamp(5%, 10%, 15%) 0px;
+  margin: clamp(0%, 1%, 15%) 0px;
 }
 
 .protfolio_warpper main .section_contenct {
@@ -1099,9 +1174,9 @@ footer.dark {
   padding-right: 20px;
 }
 
-.protfolio_warpper main .section_contenct .contanct_form .contanct_wellcoming {
-  padding: 10px 40px;
+.protfolio_warpper main .section_contenct .contanct_wellcoming {
   text-align: center;
+  padding: 10px clamp(0px, 20px, 7%);
 }
 
 .protfolio_warpper main .section footer {
@@ -1208,5 +1283,7 @@ footer.dark {
   --second-text-color:gray ;
   --toggle-button-color:gray;
   --toggle-inner-color:#FFFFFF;
+  --nav-bg:#ccc8c4;
+  --input-color: #d0caca;
 }
 /*# sourceMappingURL=main.css.map */

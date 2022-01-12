@@ -10,6 +10,8 @@
     --second-text-color:  #{$dark_decondary_text_color};
     --toggle-button-color:#{$dark_toggle-button};
     --toggle-inner-color:#{$dark_toggle-inner};
+    --nav-bg:#{$dark_nav};
+    --input-color : #{$dark_input};
 }
 body , html {
     // overflow-x:  hidden;
@@ -35,24 +37,6 @@ ul {
 }
 
 
-
-
-
-// need to fixed 
-// .section_more-work ul{
-//     display: grid;
-//     grid-template-columns: repeat(4 ,1fr);
-// }
-.section_more-work ul li{
-    min-width: 200px;
-}
-.test{
-    background-color: $primery_blue;
-    padding : 20px ;
-    margin: 10px;
-    
-}
-
 .flex-col {
     @include flex-col;
 }
@@ -65,4 +49,7 @@ ul {
 
 .justify-center{
     justify-content: center;
+}
+.mx{
+    margin: 0px clamp(0%, 10%, 20%);
 }

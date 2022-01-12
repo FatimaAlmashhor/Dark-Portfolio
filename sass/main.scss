@@ -239,7 +239,7 @@
                 &_work{
                     @include flex-col ;
                     // max-width: $max-width;
-                    margin: clamp(5% , 10% , 15%) 0px ;
+                    margin: clamp(5% , 10% , 15%) 0px 0px;
                     .project{
                         padding: 10px;
                         // margin :10px 0px ;
@@ -289,7 +289,7 @@
                 }
                
                 &_more-work{
-                    margin: clamp(5% , 10% , 15%) 0px ;
+                    margin: clamp(0% , 1% , 15%) 0px ;
                     // &_warpper{
                     // }
                 }
@@ -302,10 +302,11 @@
                         form{
                             padding-right: 20px;
                         }
-                        .contanct_wellcoming{
-                            padding : 10px 40px;
-                            text-align: center;
-                        }
+                        
+                    }
+                    .contanct_wellcoming{
+                        text-align: center;
+                        padding :10px clamp(0px ,20px ,7%);
                     }
                 }
                 footer{
@@ -382,4 +383,6 @@
     --second-text-color :#{$light_decondary_text_color} ;
     --toggle-button-color:#{$light_toggle-button};
     --toggle-inner-color:#{$light_toggle-inner};
+    --nav-bg:#{$light_nav};
+    --input-color : #{$light_input};
 }

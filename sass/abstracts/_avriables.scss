@@ -4,17 +4,24 @@ $primery_blue : #5CDCF8 ;
 $secondary_yellow : #F8E85C ;
 $secondary_pink : #F85CA7 ;
 $light_brown : #DDD9D4;
+$darker-brown : #ccc8c4;
+
 
 $primary_white_text : #FFFFFF ;
 $secondry_gray_text :#D2D2D2 ;
 $third_gray_text :#ebebeb ;
 $darker_gray : gray ;
+
+
 // dark mode
 $dark_bg_color:$main_bg_color;
 $dark_primary_text_color:$primary_white_text;
 $dark_decondary_text_color:$secondry_gray_text;
 $dark_toggle-button : $primary_white_text ;
 $dark_toggle-inner : $main_bg_color ;
+$dark_nav : $main_bg_color ;
+$dark_input : black ;
+
 
 // light mode
 $light_bg_color : $light_brown ;
@@ -22,6 +29,8 @@ $light_primary_text_color : $main_bg_color ;
 $light_decondary_text_color :$darker_gray ;
 $light_toggle-button :  $darker_gray;
 $light_toggle-inner : $primary_white_text ;
+$light_nav : $darker-brown ;
+$light_input : #d0caca ;
 
 $theme :'dark';
 
