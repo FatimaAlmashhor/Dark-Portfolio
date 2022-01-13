@@ -87,11 +87,17 @@ ul {
 }
 
 .mx {
-  margin: 0px clamp(0%, 2%, 7%);
+  margin: 0px 2%;
 }
 
 .mb {
-  margin-bottom: clamp(0%, 10%, 20%);
+  margin-bottom: 30%;
+}
+
+@media screen and (min-width: 1022px) {
+  .mx {
+    margin: 0px clamp(0%, 10%, 20%);
+  }
 }
 
 .hilght-text {
@@ -107,7 +113,7 @@ ul {
   height: 50%;
   bottom: 0px;
   z-index: -1;
-  background-color: rgba(248, 92, 167, 0.7);
+  background-color: rgba(248, 232, 92, 0.7);
 }
 
 .project_name {
@@ -161,7 +167,6 @@ ul {
 }
 
 @media screen and (max-width: 1022px) {
-
   .secondary-text {
     color: #D2D2D2;
     font-size: 24px;
@@ -462,9 +467,6 @@ input, textarea {
 }
 
 @media screen and (min-width: 1022px) {
-  .mx {
-    margin: 0px clamp(0%, 10%, 20%);
-  }
   .project_img-view {
     width: 60%;
     margin-right: 40px;
@@ -634,6 +636,7 @@ input, textarea {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  margin-bottom: 14px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -696,6 +699,15 @@ input, textarea {
 
 .card-warpper {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -716,11 +728,69 @@ input, textarea {
 }
 
 .card-warpper .cards-list .card {
+  --gradnet-card: linear-gradient(40deg,red, black , red);
   position: relative;
+  background-size: 50% 100%;
+  width: 100%;
+  height: 200px;
+  padding: 2px;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  z-index: 1;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.card-warpper .cards-list .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  z-index: -1;
+  background: var(--gradnet-card);
+  background-size: auto;
+  -webkit-transition: -webkit-transform 0.7s;
+  transition: -webkit-transform 0.7s;
+  transition: transform 0.7s;
+  transition: transform 0.7s, -webkit-transform 0.7s;
+}
+
+.card-warpper .cards-list .card:hover::before {
+  -webkit-animation: rotateCard 0.9s ease infinite alternate;
+          animation: rotateCard 0.9s ease infinite alternate;
+}
+
+@-webkit-keyframes rotateCard {
+  to {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    -webkit-transform: rotateY(185deg);
+            transform: rotateY(185deg);
+  }
+}
+
+@keyframes rotateCard {
+  to {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    -webkit-transform: rotateY(185deg);
+            transform: rotateY(185deg);
+  }
+}
+
+.card-warpper .cards-list .card .card_content {
   background-color: var(--input-color);
   width: 100%;
-  padding: 80px;
-  text-align: center;
+  height: 100%;
+  padding: .875rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -730,15 +800,18 @@ input, textarea {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   border-radius: 5px;
-  z-index: 1;
-  overflow: hidden;
+}
+
+.card-warpper .cards-list .card .card_content_text {
+  width: 100%;
+  height: 100%;
+  background: chocolate;
 }
 
 @-webkit-keyframes border-animation {
@@ -1155,8 +1228,10 @@ footer.dark {
   justify-self: flex-start;
 }
 
-.protfolio_warpper main .section_more-work {
-  margin: clamp(0%, 1%, 15%) 0px;
+.protfolio_warpper main .section_servcies {
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
 }
 
 .protfolio_warpper main .section_contenct {
