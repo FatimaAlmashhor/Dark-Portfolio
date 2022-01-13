@@ -1,12 +1,20 @@
 const toggleBtn = document.getElementById('menu');
 const nav = document.getElementById('nav');
-const navList = document.querySelectorAll('.nav_list > li');
+const navList = document.querySelectorAll('.nav_list > li > a');
+
+console.log('list is ', navList);
 navList.forEach(element => {
     element.addEventListener('click', (e) => {
-        e.target.classList.remove('active')
-        // console.log(e.target.classList.toggle('active'));
+        console.log('clicked', e.target);
+        const current = document.querySelector('.active')
+        console.log('current', current);
+        current.classList.remove('active')
+        e.target.classList.add("active")
+        // e.target.classList.remove('active')
     })
 });
+
+
 let toggle = true;
 toggleBtn.addEventListener('click', () => {
     if (toggle) {
