@@ -1,6 +1,8 @@
 
 let massage = document.getElementById('massage');
 let email = document.getElementById('email');
+let email_error = document.getElementById('email-error');
+let message_error = document.getElementById('message-error');
 let form = document.getElementById('form');
 
 window.onload = function () {
@@ -12,11 +14,13 @@ window.onload = function () {
 
 // email valid
 function validEmail(event) {
+    email_error.innerHTML = '';
     let emailValid = event.value.toLowerCase()
         .match(
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         );
     if (emailValid == null) {
+        email_error.innerHTML = 'Your emaill should be valid';
         return false
     }
     else {
@@ -28,25 +32,30 @@ function validEmail(event) {
 
 // url Massage 
 function validMassage(event) {
+    message_error.innerHTML = ''
     if (event.value.length > 20) {
         return true;
     }
     else {
+        message_error.innerHTML = 'Your emaill should be more then 20 chars';
         return false
     }
 
 }
 
-const submitMassage(){
+function submitMassage() {
     // generate a five digit number for the contact_number variable
-    this.contact_number.value = Math.random() * 100000 | 0;
+    // this.contact_number.value = Math.random() * 100000 | 0;
     // these IDs from the previous steps
-    // emailjs.sendForm('contact_service', 'contact_form', this)
-    //     .then(function () {
-    //         console.log('SUCCESS!');
-    //     }, function (error) {
-    //         console.log('FAILED...', error);
-    //     });
+    emailjs.sendForm('service_hl9ya8n', 'template_noh9yz2', form)
+        .then(function () {
+            console.log('SUCCESS!');
+            email.value = '';
+            massage.value = '';
+            alert('Your massage sent , Thank you .')
+        }, function (error) {
+            console.log('FAILED...', error);
+        });
 }
 
 

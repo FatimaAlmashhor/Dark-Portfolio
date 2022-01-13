@@ -166,6 +166,10 @@ ul {
   color: var(--second-text-color);
 }
 
+.color-red {
+  color: #FF6464;
+}
+
 @media screen and (max-width: 1022px) {
   .secondary-text {
     color: #D2D2D2;
