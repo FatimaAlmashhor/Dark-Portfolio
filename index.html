@@ -258,6 +258,9 @@
                             <li class="gallery_item">
                                 <div class="small-project" data-small-project='5'></div>
                             </li>
+                            <li class="gallery_item">
+                                <div class="small-project" data-small-project='6'></div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -269,10 +272,21 @@
                 <h2 class="peimary-text"><span class="color-red">G</span>et In Touch</h2>
                 <div class="section_contenct">
                     <div class="contanct_form">
-                        <form>
-                            <input type='text' placeholder="Enter your email" />
-                            <textarea rows="10" placeholder="Enter your massage"></textarea>
-                            <button class="btn">Send</button>
+                        <form id='form'>
+                            <input 
+                            type='text' 
+                            id='email'
+                            name='email' 
+                            placeholder="Enter your email" />
+
+                            <p class="third-text color-red" id='email-error'></p>
+                            <textarea 
+                                rows="10"
+                                id='massage'
+                                name='email' 
+                                placeholder="Enter your massage"></textarea>
+                            <p class="third-text color-red" id='message-error'></p>
+                            <button  type='submit' class="btn">Send</button>
                         </form>
                     </div>
                     <div class="contanct_wellcoming">
@@ -294,8 +308,12 @@
             </section>
         </main>
     </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="./dist/js/darkMode.js"></script>
     <script src="./dist/js/toggleMenu.js"></script>
+    <script src='./dist/js/imageEffect.js'></script>
+    <script src="./utils/js/email.sitting.js"></script>
+    <script src="./dist/js/contact.js"></script>
 </body>
 
 </html>
