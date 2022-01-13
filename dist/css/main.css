@@ -517,8 +517,8 @@ input, textarea {
 }
 
 .more-projects-gallery .gallery_item {
-  width: 27%;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   -webkit-box-flex: 1;
       -ms-flex: auto;
           flex: auto;
@@ -532,7 +532,7 @@ input, textarea {
 }
 
 .more-projects-gallery .gallery_item:hover .small-project {
-  background-size: 180%;
+  background-size: 110%;
   display: inline-block;
   -webkit-transition: all 5s ease-in-out;
   transition: all 5s ease-in-out;
@@ -733,7 +733,7 @@ input, textarea {
   background-size: 50% 100%;
   width: 100%;
   height: 200px;
-  padding: 2px;
+  padding: 3px;
   text-align: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -1232,6 +1232,12 @@ footer.dark {
   max-height: -webkit-fit-content;
   max-height: -moz-fit-content;
   max-height: fit-content;
+}
+
+.protfolio_warpper main .section_more-work {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .protfolio_warpper main .section_contenct {
