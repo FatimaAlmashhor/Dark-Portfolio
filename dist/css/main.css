@@ -1,13 +1,7 @@
-/*
-This file is used to contain all abstracts imports.
-Files inside this folder can contain abstract settings, helpers or functions. They have no direct output.
-*/
+
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Ropa+Sans&display=swap");
-/*
-This file is used to contain all base imports.
-Files inside this folder can contain global styles used in the project.
-*/
+
 * {
   margin: 0px;
   padding: 0px;
@@ -53,11 +47,7 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
@@ -65,24 +55,15 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
 .flex-reverse {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
 }
 
 .justify-center {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
           justify-content: center;
 }
 
@@ -182,11 +163,7 @@ ul {
   }
 }
 
-/* Additonal Base Stylesheets */
-/*
-This file is used to contain all component imports.
-Files inside this folder should contain all styles relating to a reusable component.
-*/
+
 .btn {
   display: block;
   border-color: transparent;
@@ -251,11 +228,7 @@ input, textarea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
           flex-direction: column;
-  --nav-padding:9px ;
   z-index: inherit;
   width: 180px;
 }
@@ -272,14 +245,13 @@ input, textarea {
 }
 
 .nav_list {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
           flex: 2;
   padding-left: 10px;
   position: relative;
   margin-left: var(--nav-padding);
 }
 
+a
 .nav_list::before {
   content: '';
   position: absolute;
@@ -322,6 +294,7 @@ input, textarea {
   position: absolute;
   width: 3px;
   left: -10px;
+  top: -10px;
   border-radius: 10px;
   z-index: 5;
   height: inherit;
@@ -347,6 +320,7 @@ input, textarea {
   z-index: 5;
   height: inherit;
   background-color: #FF6464;
+  top: -10px;
 }
 
 @media screen and (max-width: 1022px) {
@@ -561,6 +535,7 @@ input, textarea {
 }
 
 .more-projects-gallery .gallery_item .small-project {
+  --background: rgba(0,0,0,0.4) ;
   position: relative;
   width: 100%;
   height: 100%;
@@ -576,7 +551,7 @@ input, textarea {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--background);
   top: 0px;
   left: 0px;
 }
@@ -746,7 +721,7 @@ input, textarea {
 }
 
 .card-warpper .cards-list .card {
-  --gradnet-card: linear-gradient(40deg,red, var(--gradnet-card) , red);
+  --gradnet-card: linear-gradient(40deg,red, black , red);
   position: relative;
   background-size: 50% 100%;
   width: 100%;
@@ -789,8 +764,8 @@ input, textarea {
 }
 
 .card-warpper .cards-list .card:hover::before {
-  -webkit-animation: rotateCard 0.9s ease infinite alternate;
-          animation: rotateCard 0.9s ease infinite alternate;
+  -webkit-animation: rotateCard 0.9s ease infinite forwards;
+          animation: rotateCard 0.9s ease infinite forwards;
 }
 
 @-webkit-keyframes rotateCard {
@@ -892,18 +867,10 @@ footer.dark {
   position: fixed;
   right: 0px;
   top: 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: end;
   z-index: 1000;
 }
 
@@ -983,12 +950,8 @@ footer.dark {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .protfolio_warpper main {
@@ -1006,15 +969,9 @@ footer.dark {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .protfolio_warpper main .section h1 {
@@ -1110,13 +1067,8 @@ footer.dark {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-transition: all 400ms ease;
+  flex-direction: row;
+  flex-wrap: wrap;
   transition: all 400ms ease;
 }
 
@@ -1183,12 +1135,8 @@ footer.dark {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-direction: column;
+  flex-wrap: wrap;
   margin: clamp(5%, 10%, 15%) 0px 0px;
 }
 
@@ -1197,26 +1145,18 @@ footer.dark {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
+  flex-direction: column;
       flex-wrap: wrap;
 }
 
 .protfolio_warpper main .section_work .project .project_details {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+   flex: 1;
   margin-top: 2rem;
 }
 
 .protfolio_warpper main .section_work .project .project_details_links {
   text-align: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-top: 20px;
   padding: 10px;
 }
@@ -1269,13 +1209,8 @@ footer.dark {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -ms-flex-direction: column-reverse;
       flex-direction: column-reverse;
 }
 
@@ -1300,17 +1235,9 @@ footer.dark {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
           align-items: center;
 }
 
@@ -1324,6 +1251,24 @@ footer.dark {
 
 .protfolio_warpper main .section footer .take-me-up::after {
   content: '  ->';
+  position: absolute;
+  right: -15px;
+  -webkit-transition: 0.5s linear;
+  transition: 0.5s linear;
+  -webkit-animation: scroll-up 1s infinite linear alternate;
+          animation: scroll-up 1s infinite linear alternate;
+}
+
+@-webkit-keyframes scroll-up {
+  to {
+    right: -24px;
+  }
+}
+
+@keyframes scroll-up {
+  to {
+    right: -24px;
+  }
 }
 
 @media screen and (min-width: 1022px) {
@@ -1341,29 +1286,18 @@ footer.dark {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
             flex-direction: row;
-    -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     height: inherit;
   }
   .protfolio_warpper main .section_work .flex-reverse {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
   }
   .protfolio_warpper main .section_contenct {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
             flex-direction: row;
-    -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
 }
@@ -1373,11 +1307,7 @@ footer.dark {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
             flex-direction: row;
-    -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
   .protfolio_warpper main {
