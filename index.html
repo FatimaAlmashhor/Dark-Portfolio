@@ -9,12 +9,12 @@
     <meta name="keywords" content="Developer, Full stack, Frontend  ,Backend , UI , UX ,  Programmer">
     <meta name="author" content="Fatima Amin Almasshor ">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <link rel="stylesheet" href="./utils/css/localmotion.css">
     <link rel="stylesheet" href="dist/css/main.css">
     <title>Fatima Amin Almashhor</title>
 </head>
 
-<body class="protfolio">
+<body class="protfolio ">
     <div class="toggle_icon" id='menu'>
         <p>Show <span> Menu</span></p>
     </div>
@@ -68,13 +68,13 @@
             </div>
         </nav>
         <!-- the main right section  -->
-        <main>
+        <main data-scroll-container>
             <!-- breif of me  -->
-            <header id='home' class="section">
+            <header id='home' class="section" >
                 <div class="section_numberic__upper">O.1</div>
-                <h1 class="color-red">
+                <h1 class="color-red" data-scroll data-scroll-speed="2" >
                     Hi ,
-                    <h1>
+                    <h1 data-scroll data-scroll-speed="1" data-scroll-target="#home">
                         I'm Fatima <span class="color-red">A</span>lmashhor
                     </h1>
                 </h1>
@@ -83,7 +83,7 @@
                 <div class="section_numberic__lower">O.1</div>
             </header>
             <!-- about section -->
-            <section id="about" class="section mx">
+            <section id="about" class="section mx" >
                 <div class="section_numberic__upper">O.2</div>
                 <!-- flex columns -->
                 <h2 class="peimary-text"><span class="color-red">A</span>bout me.</h2>
@@ -117,8 +117,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="section_lang">
-                    <div class="section_lang_warpper">
+                <div class="section_lang">
+                    <div class="section_lang_warpper" data-scroll data-scroll-speed="-4" data-scroll-target="#about" data-scroll-direction="horizontal">
                         <div class="lang-items">
                             <span class="stock-red">JavaScript</span>
                         </div>
@@ -141,7 +141,7 @@
                             <span class="stock-blue">Docker</span>
                         </div>
                     </div>
-                </div> -->
+                </div>
                 <div class="section_numberic__lower">O.2</div>
             </section>
             <!-- work section -->
@@ -309,11 +309,14 @@
         </main>
     </div>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src='./utils/js/localmotion.js'></script>
     <script src="./dist/js/darkMode.js"></script>
     <script src="./dist/js/toggleMenu.js"></script>
     <script src='./dist/js/imageEffect.js'></script>
     <script src="./utils/js/email.sitting.js"></script>
     <script src="./dist/js/contact.js"></script>
+    <script src="./dist/js/main.js"></script>
 </body>
 
 </html>

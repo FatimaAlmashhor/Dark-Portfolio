@@ -1,9 +1,8 @@
 const imageHover = document.querySelectorAll('.gallery_item')
 
-let active = 0;
 // hoving image 
 imageHover.forEach(element => {
-
+    // element.childNodes[1].style.setProperty("--background", "rgba(0,0,0,0.4)")
     element.addEventListener('mouseenter', () => {
         element.childNodes[1].style.transform = 'perspective(100px) translateZ(25px)'
     })
@@ -13,14 +12,17 @@ imageHover.forEach(element => {
 
 })
 
+function imageActive() {
+    let active = Math.floor(Math.random() * 6);
+    imageHover.forEach(element => {
+        element.childNodes[1].style.setProperty("--background", "rgba(0,0,0,0.4)")
+    })
+    imagebefore = imageHover[active].childNodes[1]
+    imagebefore.style.setProperty("--background", "transparent")
+
+}
 
 
 //try something else 
-const time = setTimeout(function () {
-    console.log(imageHover[active])
-    // active++;
-    // if (active >= 6) {
-    //     active = 0;
-    // }
-}, 100);
+const time = setInterval(imageActive, 1000);
 

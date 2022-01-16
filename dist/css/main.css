@@ -280,6 +280,7 @@ input, textarea {
   margin-left: var(--nav-padding);
 }
 
+a
 .nav_list::before {
   content: '';
   position: absolute;
@@ -322,6 +323,7 @@ input, textarea {
   position: absolute;
   width: 3px;
   left: -10px;
+  top: -10px;
   border-radius: 10px;
   z-index: 5;
   height: inherit;
@@ -347,6 +349,7 @@ input, textarea {
   z-index: 5;
   height: inherit;
   background-color: #FF6464;
+  top: -10px;
 }
 
 @media screen and (max-width: 1022px) {
@@ -561,6 +564,7 @@ input, textarea {
 }
 
 .more-projects-gallery .gallery_item .small-project {
+  --background: rgba(0,0,0,0.4) ;
   position: relative;
   width: 100%;
   height: 100%;
@@ -576,7 +580,7 @@ input, textarea {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: var(--background);
   top: 0px;
   left: 0px;
 }
@@ -746,7 +750,7 @@ input, textarea {
 }
 
 .card-warpper .cards-list .card {
-  --gradnet-card: linear-gradient(40deg,red, var(--gradnet-card) , red);
+  --gradnet-card: linear-gradient(40deg,red, black , red);
   position: relative;
   background-size: 50% 100%;
   width: 100%;
@@ -789,8 +793,8 @@ input, textarea {
 }
 
 .card-warpper .cards-list .card:hover::before {
-  -webkit-animation: rotateCard 0.9s ease infinite alternate;
-          animation: rotateCard 0.9s ease infinite alternate;
+  -webkit-animation: rotateCard 0.9s ease infinite forwards;
+          animation: rotateCard 0.9s ease infinite forwards;
 }
 
 @-webkit-keyframes rotateCard {
@@ -1324,6 +1328,24 @@ footer.dark {
 
 .protfolio_warpper main .section footer .take-me-up::after {
   content: '  ->';
+  position: absolute;
+  right: -15px;
+  -webkit-transition: 0.5s linear;
+  transition: 0.5s linear;
+  -webkit-animation: scroll-up 1s infinite linear alternate;
+          animation: scroll-up 1s infinite linear alternate;
+}
+
+@-webkit-keyframes scroll-up {
+  to {
+    right: -24px;
+  }
+}
+
+@keyframes scroll-up {
+  to {
+    right: -24px;
+  }
 }
 
 @media screen and (min-width: 1022px) {
