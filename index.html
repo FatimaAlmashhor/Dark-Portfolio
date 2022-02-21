@@ -70,7 +70,8 @@
         <!-- the main right section  -->
         <main data-scroll-container>
             <!-- breif of me  -->
-            <header id='home' class="section" >
+            <header id='home' class="section" onmousemove="comet()">
+                <div id="container-comet"></div>
                 <div class="section_numberic__upper">O.1</div>
                 <h1 class="color-red" data-scroll data-scroll-speed="2" >
                     Hi ,
@@ -244,22 +245,34 @@
                     <div class="section_more-work_warpper">
                         <ul class="more-projects-gallery">
                             <li class="gallery_item item-lg">
-                                <div class="small-project small-project-1" data-small-project='1'></div>
+                                <a href='https://fatimaalmashhor.github.io/Portfolio-react/'>
+                                    <div class="small-project small-project-1" data-small-project='1'></div>
+                                </a>
                             </li>
                             <li class="gallery_item">
-                                <div class="small-project" data-small-project='2'></div>
+                                <a href='#'>
+                                    <div class="small-project" data-small-project='2'></div>
+                                </a>
                             </li>
                             <li class="gallery_item">
-                                <div class="small-project" data-small-project='3'></div>
+                                <a href='#'>
+                                    <div class="small-project" data-small-project='3'></div>
+                                </a>
                             </li>
                             <li class="gallery_item">
-                                <div class="small-project" data-small-project='4'></div>
+                                <a href='https://fatimaalmashhor.github.io/create-cards-react/'>
+                                    <div class="small-project" data-small-project='4'></div>
+                                </a>
                             </li>
                             <li class="gallery_item">
-                                <div class="small-project" data-small-project='5'></div>
+                                <a href='https://fatimaalmashhor.github.io/slider-react/'>
+                                    <div class="small-project" data-small-project='5'></div>
+                                </a>
                             </li>
                             <li class="gallery_item">
-                                <div class="small-project" data-small-project='6'></div>
+                                <a href='https://rawcdn.githack.com/FatimaAlmashhor/fullPage-portfolio/master/index.html'>
+                                    <div class="small-project" data-small-project='6'></div>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -317,6 +330,7 @@
     <script src="./utils/js/email.sitting.js"></script>
     <script src="./dist/js/contact.js"></script>
     <script src="./dist/js/main.js"></script>
+    <script src="./dist/js/cometEffect.js"></script>
 </body>
 
 </html>

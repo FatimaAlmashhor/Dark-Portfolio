@@ -18,9 +18,6 @@ const preloadFonts = (id) => {
     });
 };
 
-// (function () {
-//     var scroll = new LocomotiveScroll({
-//         el: document.querySelector('[data-scroll-container]'),
-//         smooth: true
-//     });
-// })();
+
+
+/*find out more @ https://github.com/Shadow-Scientist/marshmallow-comet*/

@@ -1423,3 +1423,25 @@ footer.dark {
   --input-color: #d0caca;
 }
 /*# sourceMappingURL=main.css.map */
+#container-comet{
+  width:100%;
+  height:100%;
+  position:absolute;
+  left:0px;
+  top:0px;
+  overflow:hidden; /*prevent overflow of comets and showing the vertical scrollbar*/
+  }
+  
+  #container-comet .particle{
+  position:absolute;
+  transform:translate(0%,0%) scale(0) rotate(0deg);
+  animation:ff linear 0.7s var(--i) forwards;
+  opacity:0.55;
+  border-radius: 50%;
+  box-shadow:0 0 0 2px rgba(0,0,0,0);
+  }
+  
+  @keyframes ff{
+  10%{transform:translate(0%,0%) scale(1) rotate(0deg)}
+  100%{transform:translate(var(--shiftX), var(--shiftY)) scale(0) rotate(360deg)}
+  }

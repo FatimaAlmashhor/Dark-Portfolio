@@ -1,4 +1,4 @@
-const imageHover = document.querySelectorAll('.gallery_item')
+const imageHover = document.querySelectorAll('.gallery_item a')
 
 // hoving image 
 imageHover.forEach(element => {
