@@ -8,7 +8,7 @@ let form = document.getElementById('form');
 window.onload = function () {
     (function () {
         // https://dashboard.emailjs.com/admin/integration
-        emailjs.init(email_user_id);
+        emailjs.init("edFVXxjyHLpEg-XTf");
     })();
 }
 
@@ -37,7 +37,7 @@ function validMassage(event) {
         return true;
     }
     else {
-        message_error.innerHTML = 'Your emaill should be more then 20 chars';
+        message_error.innerHTML = 'Your Massage should be more then 20 chars';
         return false
     }
 
@@ -47,7 +47,7 @@ function submitMassage() {
     // generate a five digit number for the contact_number variable
     // this.contact_number.value = Math.random() * 100000 | 0;
     // these IDs from the previous steps
-    emailjs.sendForm('service_hl9ya8n', 'template_noh9yz2', form)
+    emailjs.sendForm('service_sqoc3f5', 'template_7ry4txa', form)
         .then(function () {
             console.log('SUCCESS!');
             email.value = '';

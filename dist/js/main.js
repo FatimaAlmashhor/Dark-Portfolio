@@ -17,7 +17,12 @@ const preloadFonts = (id) => {
         });
     });
 };
+Promise.all([preloadImages('.tiles__line-img'), preloadFonts('rmd7deq')]).then(() => {
+    // Remove loader (loading class)
+    document.body.classList.remove('loading');
 
+    backtopEl.addEventListener('click', () => scroll.scrollTo(headerEl));
+});
 
 
 /*find out more @ https://github.com/Shadow-Scientist/marshmallow-comet*/
